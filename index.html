@@ -1,151 +1,621 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alcatraz CODM</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Tahoma, sans-serif;
-      background: #0b1020;
-      color: white;
-    }
-    header {
-      background: #151d33;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #00e5ff;
-    }
-    header h1 { color: #00e5ff; }
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-      padding: 16px;
-      background: #202b45;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-    }
-    .hero {
-      text-align: center;
-      padding: 65px 20px;
-      background: linear-gradient(135deg, #14213d, #263c68);
-    }
-    .hero h2 { font-size: 30px; }
-    .hero p { color: #cbd5e1; }
-    .btn {
-      display: inline-block;
-      background: #00c8e5;
-      color: #07111d;
-      padding: 13px 25px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-    .section {
-      padding: 35px 20px;
-      text-align: center;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      max-width: 1000px;
-      margin: 25px auto;
-    }
-    .card {
-      background: #19243c;
-      padding: 25px;
-      border: 1px solid #304361;
-      border-radius: 15px;
-    }
-    .card h3 { color: #00e5ff; }
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #151d33;
-      color: #9ca3af;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AlcatrazCODM | کالاف دیوتی موبایل</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  background:#070b14;
+  color:#fff;
+  line-height:1.8;
+}
+
+header{
+  background:linear-gradient(135deg,#10182b,#08101e);
+  padding:25px 15px;
+  text-align:center;
+  border-bottom:1px solid #00e5ff;
+}
+
+.logo{
+  font-size:32px;
+  font-weight:bold;
+  color:#00e5ff;
+  letter-spacing:2px;
+}
+
+header p{
+  color:#aab4c7;
+  margin-top:5px;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:12px;
+  background:rgba(12,18,32,.96);
+  border-bottom:1px solid #1d304c;
+}
+
+nav a{
+  color:#dce8f5;
+  text-decoration:none;
+  padding:8px 14px;
+  border-radius:8px;
+  transition:.2s;
+}
+
+nav a:hover{
+  background:#00d9ff;
+  color:#06101b;
+}
+
+.hero{
+  min-height:430px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:50px 20px;
+  background:
+    radial-gradient(circle at center,#17365b 0,#0a1222 45%,#070b14 100%);
+}
+
+.hero-content{
+  max-width:750px;
+}
+
+.hero h1{
+  font-size:45px;
+  color:#00e5ff;
+  margin-bottom:15px;
+}
+
+.hero h2{
+  font-size:25px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  color:#b9c5d6;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:10px;
+  background:#00d9ff;
+  color:#031018;
+  text-decoration:none;
+  font-weight:bold;
+  border:0;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 5px 20px #00d9ff55;
+}
+
+.section{
+  max-width:1150px;
+  margin:auto;
+  padding:65px 20px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.section-title h2{
+  font-size:30px;
+  color:#00e5ff;
+}
+
+.section-title p{
+  color:#8997ab;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:linear-gradient(145deg,#111b2e,#0d1525);
+  border:1px solid #243653;
+  border-radius:16px;
+  padding:25px;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:#00d9ff;
+}
+
+.card h3{
+  color:#00e5ff;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#aeb9ca;
+}
+
+.rank{
+  text-align:center;
+}
+
+.rank-icon{
+  font-size:45px;
+  margin-bottom:10px;
+}
+
+.rank-name{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.rank-points{
+  color:#8f9db2;
+  font-size:14px;
+}
+
+.shop-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.product-icon{
+  height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:55px;
+  background:#0a1220;
+  border-radius:12px;
+  margin-bottom:18px;
+}
+
+.price{
+  color:#00ffae;
+  font-size:20px;
+  font-weight:bold;
+  margin:12px 0;
+}
+
+.shop-card button{
+  width:100%;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:#10192a;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+th,td{
+  padding:15px;
+  text-align:center;
+  border-bottom:1px solid #24334c;
+}
+
+th{
+  background:#16233a;
+  color:#00e5ff;
+}
+
+td{
+  color:#d5dce7;
+}
+
+.badge{
+  padding:4px 10px;
+  border-radius:20px;
+  background:#243653;
+}
+
+.account{
+  max-width:600px;
+  margin:auto;
+}
+
+.input{
+  width:100%;
+  padding:13px;
+  margin:8px 0 15px;
+  background:#0a1220;
+  color:white;
+  border:1px solid #293c58;
+  border-radius:9px;
+  outline:none;
+}
+
+.input:focus{
+  border-color:#00e5ff;
+}
+
+.cart{
+  position:fixed;
+  left:18px;
+  bottom:18px;
+  z-index:2000;
+  background:#00d9ff;
+  color:#031018;
+  padding:12px 18px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 5px 25px #0008;
+}
+
+#cartPanel{
+  display:none;
+  position:fixed;
+  z-index:3000;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:#0009;
+}
+
+.cart-box{
+  width:min(500px,92%);
+  max-height:80vh;
+  overflow:auto;
+  margin:60px auto;
+  background:#10192a;
+  border:1px solid #00d9ff;
+  border-radius:18px;
+  padding:25px;
+}
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid #26364e;
+}
+
+.close{
+  float:left;
+  cursor:pointer;
+  font-size:25px;
+  color:#ff6375;
+}
+
+.empty{
+  text-align:center;
+  color:#8d9aad;
+  padding:20px;
+}
+
+footer{
+  text-align:center;
+  padding:35px 20px;
+  background:#050911;
+  border-top:1px solid #18263c;
+  color:#7d899b;
+}
+
+@media(max-width:600px){
+
+  .logo{
+    font-size:25px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero h2{
+    font-size:21px;
+  }
+
+  nav{
+    justify-content:flex-start;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+  }
+
+  nav a{
+    white-space:nowrap;
+  }
+
+  .section{
+    padding:45px 15px;
+  }
+
+  th,td{
+    padding:10px 5px;
+    font-size:13px;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>ALCATRAZ CODM</h1>
-  <p>دنیای رقابت و هیجان کالاف دیوتی موبایل</p>
+  <div class="logo">ALCATRAZ CODM</div>
+  <p>دنیای رقابت، رنک و فروشگاه کالاف دیوتی موبایل</p>
 </header>
 
 <nav>
-  <a href="#">خانه</a>
+  <a href="#home">خانه</a>
   <a href="#tournament">تورنمنت</a>
+  <a href="#rank">رنک‌ها</a>
   <a href="#leaderboard">لیدربورد</a>
   <a href="#shop">فروشگاه</a>
   <a href="#account">حساب کاربری</a>
 </nav>
 
-<section class="hero">
-  <h2>به میدان نبرد خوش آمدی!</h2>
-  <p>رقابت کن، امتیاز بگیر و به رتبه Legendary برس.</p>
-  <a class="btn" href="#tournament">شروع رقابت</a>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>ALCATRAZ CODM</h1>
+    <h2>به میدان نبرد خوش آمدی 🎮</h2>
+    <p>
+      رقابت کن، امتیاز بگیر، رتبه خودت را بالا ببر
+      و برای رسیدن به Legendary تلاش کن.
+    </p>
+
+    <a class="btn" href="#shop">ورود به فروشگاه</a>
+    <a class="btn" href="#tournament">مشاهده تورنمنت‌ها</a>
+  </div>
 </section>
 
 <section class="section" id="tournament">
-  <h2>🏆 تورنمنت‌ها</h2>
+
+  <div class="section-title">
+    <h2>🏆 تورنمنت‌ها</h2>
+    <p>در رقابت‌های AlcatrazCODM شرکت کن</p>
+  </div>
+
   <div class="cards">
+
     <div class="card">
-      <h3>تورنمنت بتل رویال</h3>
-      <p>در رقابت‌های بتل رویال شرکت کن.</p>
+      <h3>🔥 بتل رویال</h3>
+      <p>در مسابقات بتل رویال شرکت کن و امتیاز کسب کن.</p>
+      <br>
+      <span class="badge">در حال ثبت‌نام</span>
     </div>
+
     <div class="card">
-      <h3>تورنمنت مولتی‌پلیر</h3>
-      <p>مهارت خودت را در میدان نشان بده.</p>
+      <h3>⚔️ مولتی‌پلیر</h3>
+      <p>مهارت خودت را در نبردهای Multiplayer نشان بده.</p>
+      <br>
+      <span class="badge">به‌زودی</span>
     </div>
+
+    <div class="card">
+      <h3>👑 مسابقات Legendary</h3>
+      <p>رقابت ویژه بازیکنان رده Legendary.</p>
+      <br>
+      <span class="badge">به‌زودی</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="rank">
+
+  <div class="section-title">
+    <h2>🏅 سیستم رنک</h2>
+    <p>مسیر پیشرفت بازیکن از Bronze تا Legendary</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card rank">
+      <div class="rank-icon">🥉</div>
+      <div class="rank-name">Bronze</div>
+      <div class="rank-points">0 تا 999 امتیاز</div>
+    </div>
+
+    <div class="card rank">
+      <div class="rank-icon">🥈</div>
+      <div class="rank-name">Silver</div>
+      <div class="rank-points">1000 تا 1999 امتیاز</div>
+    </div>
+
+    <div class="card rank">
+      <div class="rank-icon">🥇</div>
+      <div class="rank-name">Gold</div>
+      <div class="rank-points">2000 تا 2999 امتیاز</div>
+    </div>
+
+    <div class="card rank">
+      <div class="rank-icon">💎</div>
+      <div class="rank-name">Platinum</div>
+      <div class="rank-points">3000 تا 3999 امتیاز</div>
+    </div>
+
+    <div class="card rank">
+      <div class="rank-icon">🔷</div>
+      <div class="rank-name">Diamond</div>
+      <div class="rank-points">4000 تا 4999 امتیاز</div>
+    </div>
+
+    <div class="card rank">
+      <div class="rank-icon">👑</div>
+      <div class="rank-name">Legendary</div>
+      <div class="rank-points">5000+ امتیاز</div>
+    </div>
+
   </div>
 </section>
 
 <section class="section" id="leaderboard">
-  <h2>🥇 جدول رتبه‌بندی</h2>
-  <div class="card">
-    <p>جدول برترین بازیکنان به‌زودی فعال می‌شود.</p>
+
+  <div class="section-title">
+    <h2>🥇 لیدربورد</h2>
+    <p>برترین بازیکنان</p>
   </div>
+
+  <table>
+
+    <tr>
+      <th>رتبه</th>
+      <th>بازیکن</th>
+      <th>امتیاز</th>
+      <th>رنک</th>
+    </tr>
+
+    <tr>
+      <td>🥇 1</td>
+      <td>AlcatrazPro</td>
+      <td>5820</td>
+      <td>👑 Legendary</td>
+    </tr>
+
+    <tr>
+      <td>🥈 2</td>
+      <td>ShadowCODM</td>
+      <td>5410</td>
+      <td>👑 Legendary</td>
+    </tr>
+
+    <tr>
+      <td>🥉 3</td>
+      <td>GhostPlayer</td>
+      <td>5120</td>
+      <td>👑 Legendary</td>
+    </tr>
+
+  </table>
 </section>
 
 <section class="section" id="shop">
-  <h2>🛒 فروشگاه</h2>
+
+  <div class="section-title">
+    <h2>🛒 فروشگاه AlcatrazCODM</h2>
+    <p>محصولات ویژه کالاف دیوتی موبایل</p>
+  </div>
+
   <div class="cards">
-    <div class="card">
-      <h3>Diamond</h3>
-      <p>محصولات ویژه دایموند</p>
+
+    <div class="card shop-card">
+      <div class="product-icon">💳</div>
+      <h3>CP کالاف دیوتی</h3>
+      <p>بسته CP برای اکانت بازی</p>
+      <div class="price">قیمت: به‌زودی</div>
+      <button class="btn" onclick="addToCart('CP کالاف دیوتی')">
+        افزودن به سبد
+      </button>
     </div>
-    <div class="card">
-      <h3>Legendary</h3>
-      <p>محصولات ویژه لجندری</p>
+
+    <div class="card shop-card">
+      <div class="product-icon">🔥</div>
+      <h3>اسکین ویژه</h3>
+      <p>محصولات و آیتم‌های ویژه CODM</p>
+      <div class="price">قیمت: به‌زودی</div>
+      <button class="btn" onclick="addToCart('اسکین ویژه CODM')">
+        افزودن به سبد
+      </button>
     </div>
-    <div class="card">
-      <h3>Damascus</h3>
-      <p>محصولات ویژه دمَسکاس</p>
+
+    <div class="card shop-card">
+      <div class="product-icon">👑</div>
+      <h3>بسته Legendary</h3>
+      <p>محصولات ویژه بازیکنان Legendary</p>
+      <div class="price">قیمت: به‌زودی</div>
+      <button class="btn" onclick="addToCart('بسته Legendary')">
+        افزودن به سبد
+      </button>
     </div>
+
+    <div class="card shop-card">
+      <div class="product-icon">🎁</div>
+      <h3>بسته ویژه</h3>
+      <p>بسته‌های ویژه AlcatrazCODM</p>
+      <div class="price">قیمت: به‌زودی</div>
+      <button class="btn" onclick="addToCart('بسته ویژه')">
+        افزودن به سبد
+      </button>
+    </div>
+
   </div>
 </section>
 
 <section class="section" id="account">
-  <h2>👤 پنل کاربری</h2>
-  <div class="card">
-    <p>بخش ورود و ثبت‌نام به‌زودی فعال می‌شود.</p>
+
+  <div class="section-title">
+    <h2>👤 حساب کاربری</h2>
+    <p>ورود به حساب AlcatrazCODM</p>
+  </div>
+
+  <div class="card account">
+
+    <label>ایمیل</label>
+    <input class="input" type="email" placeholder="ایمیل خود را وارد کنید">
+
+    <label>رمز عبور</label>
+    <input class="input" type="password" placeholder="رمز عبور">
+
+    <button class="btn" onclick="loginDemo()">
+      ورود
+    </button>
+
+    <br><br>
+
+    <p id="loginMessage"></p>
+
   </div>
 </section>
 
 <footer>
-  <p>© 2026 AlcatrazCODM | تمامی حقوق محفوظ است.</p>
+  <p>© 2026 AlcatrazCODM</p>
+  <p>تمامی حقوق محفوظ است.</p>
 </footer>
 
-</body>
-  </html>
-  
+<div class="cart" onclick="openCart()">
+  🛒 سبد خرید
+  <span id="cartCount">0</span>
+</div>
+
+<div id="cartPanel">
+
+  <div class="cart-box">
+
+    <span class="close" onclick="closeCart()">✕</span>
+
+    <h2>🛒 سبد خرید</h2>
+
+    <br>
+
+    <div id="cartItems" class="empty">
+      سبد خرید خالی است.
+    </div>
+
+    <br>
+
+    <button class="btn" onclick="checkout()">
+      
