@@ -618,4 +618,99 @@ footer{
     <br>
 
     <button class="btn" onclick="checkout()">
-      
+      ادامه به تسویه‌حساب
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+
+let cart = [];
+
+function addToCart(product){
+
+  cart.push(product);
+
+  document.getElementById("cartCount").innerText = cart.length;
+
+  alert("محصول به سبد خرید اضافه شد ✅");
+}
+
+function openCart(){
+
+  document.getElementById("cartPanel").style.display="block";
+
+  renderCart();
+}
+
+function closeCart(){
+
+  document.getElementById("cartPanel").style.display="none";
+}
+
+function renderCart(){
+
+  const box = document.getElementById("cartItems");
+
+  if(cart.length === 0){
+
+    box.innerHTML="سبد خرید خالی است.";
+
+    return;
+  }
+
+  box.innerHTML="";
+
+  cart.forEach((item,index)=>{
+
+    const div=document.createElement("div");
+
+    div.className="cart-item";
+
+    div.innerHTML=`
+      <span>${item}</span>
+      <button class="btn" onclick="removeItem(${index})">
+        حذف
+      </button>
+    `;
+
+    box.appendChild(div);
+
+  });
+
+}
+
+function removeItem(index){
+
+  cart.splice(index,1);
+
+  document.getElementById("cartCount").innerText=cart.length;
+
+  renderCart();
+}
+
+function checkout(){
+
+  if(cart.length===0){
+
+    alert("سبد خرید شما خالی است.");
+
+    return;
+  }
+
+  alert("سیستم تسویه‌حساب در مرحله بعد به سایت اضافه می‌شود.");
+}
+
+function loginDemo(){
+
+  document.getElementById("loginMessage").innerHTML=
+  "🔐 سیستم ورود واقعی در مرحله بعد با سرور و دیتابیس متصل می‌شود.";
+
+}
+
+</script>
+
+</body>
+  </html>
