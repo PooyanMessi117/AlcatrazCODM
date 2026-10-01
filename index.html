@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AlcatrazCODM | Tournament</title>
+<title>AlcatrazCODM | فروشگاه CODM</title>
 
 <style>
 *{
@@ -15,408 +14,451 @@
 
 body{
   font-family:Tahoma,Arial,sans-serif;
-  background:#070a11;
+  background:#05080b;
   color:#fff;
-  line-height:1.8;
 }
 
-html{
-  scroll-behavior:smooth;
+button{
+  font-family:inherit;
+  cursor:pointer;
 }
 
 header{
-  background:linear-gradient(135deg,#111a2d,#070b13);
-  padding:22px 15px;
-  border-bottom:1px solid #26364f;
+  background:#080b0e;
+  border-bottom:2px solid #f5c400;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
-.header-box{
-  max-width:1200px;
+.nav{
+  max-width:1400px;
   margin:auto;
+  min-height:80px;
   display:flex;
   align-items:center;
   justify-content:space-between;
+  padding:10px 25px;
   gap:20px;
 }
 
 .logo{
-  color:#00e5ff;
-  font-size:28px;
+  font-size:25px;
+  font-weight:900;
+  color:#ffd000;
+  line-height:1.1;
+}
+
+.logo span{
+  display:block;
+  color:#fff;
+  font-size:13px;
+  letter-spacing:3px;
+}
+
+.menu{
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+
+.menu a{
+  color:#fff;
+  text-decoration:none;
   font-weight:bold;
 }
 
-.user-top{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:#dce6f3;
+.menu a:hover{
+  color:#ffd000;
 }
 
-.avatar-small{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#00e5ff,#1261ff);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:21px;
-}
-
-nav{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:#0d1422;
-  border-bottom:1px solid #263750;
-}
-
-.nav-box{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  padding:10px;
-}
-
-nav a{
-  color:#dbe7f5;
-  text-decoration:none;
-  padding:9px 15px;
-  white-space:nowrap;
-  border-radius:8px;
-}
-
-nav a:hover{
-  background:#00d9ff;
-  color:#06101a;
+.wallet-mini{
+  background:#11171d;
+  border:1px solid #ffd000;
+  padding:10px 15px;
+  border-radius:12px;
+  color:#ffd000;
+  font-weight:bold;
 }
 
 .hero{
-  padding:70px 20px;
-  text-align:center;
+  max-width:1400px;
+  margin:20px auto;
+  height:270px;
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
   background:
-  radial-gradient(circle at center,#173c67 0,#0a1322 45%,#070a11 100%);
+    linear-gradient(90deg,rgba(0,0,0,.2),rgba(0,0,0,.75)),
+    url("images/alcatraz-banner.jpg") center/cover;
+  border:1px solid #5d4b00;
+}
+
+.hero-content{
+  position:absolute;
+  right:45px;
+  top:50%;
+  transform:translateY(-50%);
 }
 
 .hero h1{
-  color:#00e5ff;
-  font-size:45px;
+  font-size:42px;
+  color:#ffd000;
   margin-bottom:10px;
-}
-
-.hero h2{
-  margin-bottom:12px;
 }
 
 .hero p{
-  color:#aebbd0;
-  max-width:700px;
-  margin:0 auto 25px;
+  font-size:18px;
 }
 
-.btn{
-  border:0;
-  background:#00d9ff;
-  color:#041018;
-  padding:11px 20px;
-  border-radius:9px;
-  font-weight:bold;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-block;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 5px 20px #00d9ff55;
-}
-
-.section{
-  max-width:1200px;
+.container{
+  max-width:1400px;
   margin:auto;
-  padding:55px 18px;
+  padding:20px;
 }
 
 .title{
-  text-align:center;
-  margin-bottom:30px;
+  font-size:28px;
+  color:#ffd000;
+  margin:20px 0;
+  border-right:5px solid #ffd000;
+  padding-right:12px;
 }
 
-.title h2{
-  color:#00e5ff;
-  font-size:29px;
-}
+/* CP */
 
-.title p{
-  color:#8795a9;
-}
-
-/* tournament */
-
-.filters{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:25px;
-}
-
-.filter{
-  background:#111c2d;
-  color:#cdd8e8;
-  border:1px solid #293b57;
-  padding:9px 15px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-.filter:hover{
-  border-color:#00e5ff;
-  color:#00e5ff;
-}
-
-.tournaments{
+.cp-layout{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:1fr 330px;
   gap:20px;
 }
 
-.tournament{
-  background:linear-gradient(145deg,#121d30,#0b1321);
-  border:1px solid #263955;
-  border-radius:15px;
-  overflow:hidden;
-  transition:.25s;
+.cp-section,
+.wallet{
+  background:#090e13;
+  border:1px solid #4d430f;
+  border-radius:18px;
+  padding:20px;
 }
 
-.tournament:hover{
-  transform:translateY(-5px);
-  border-color:#00d9ff;
-}
-
-.tournament-image{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-}
-
-.tournament-body{
-  padding:18px;
-}
-
-.status{
-  display:inline-block;
-  padding:4px 10px;
-  border-radius:20px;
-  font-size:12px;
-  margin-bottom:10px;
-}
-
-.open{
-  background:#073e35;
-  color:#00ffbd;
-}
-
-.soon{
-  background:#3d3010;
-  color:#ffd85a;
-}
-
-.closed{
-  background:#401b23;
-  color:#ff7185;
-}
-
-.tournament h3{
-  color:#00e5ff;
-  margin-bottom:8px;
-}
-
-.info{
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px solid #24344d;
-  padding:8px 0;
-  color:#b4c0d1;
-  font-size:14px;
-}
-
-.prize{
-  color:#00ffae;
-  font-size:19px;
-  font-weight:bold;
-  margin:13px 0;
-}
-
-/* profile */
-
-.profile{
+.cp-grid{
   display:grid;
-  grid-template-columns:280px 1fr;
-  gap:20px;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
 }
 
-.profile-card,
-.stats-card{
-  background:linear-gradient(145deg,#121d30,#0c1422);
-  border:1px solid #263955;
-  border-radius:17px;
-  padding:25px;
-}
-
-.profile-card{
+.cp-card{
+  background:linear-gradient(145deg,#111a20,#06090c);
+  border:1px solid #39424a;
+  border-radius:14px;
+  padding:12px;
   text-align:center;
+  transition:.2s;
 }
 
-.avatar{
-  width:110px;
-  height:110px;
-  border-radius:50%;
-  margin:0 auto 15px;
+.cp-card:hover{
+  transform:translateY(-4px);
+  border-color:#ffd000;
+}
+
+.cp-image{
+  height:85px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:55px;
-  background:linear-gradient(135deg,#00e5ff,#204cff);
-  border:4px solid #1c3955;
-}
-
-.profile-name{
-  font-size:23px;
-  font-weight:bold;
-}
-
-.profile-id{
-  color:#7f90a8;
-  font-size:13px;
-}
-
-.rank-big{
-  margin:15px 0;
-  padding:10px;
-  border-radius:10px;
-  background:#192943;
-  color:#00e5ff;
-  font-weight:bold;
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-
-.stat{
-  background:#0a1220;
-  padding:20px;
-  border-radius:12px;
-  text-align:center;
-  border:1px solid #21334c;
-}
-
-.stat strong{
-  display:block;
-  font-size:25px;
-  color:#00e5ff;
-}
-
-.stat span{
-  color:#8795a9;
-  font-size:13px;
-}
-
-/* leaderboard */
-
-table{
-  width:100%;
-  border-collapse:collapse;
-  background:#101a2a;
-  border-radius:15px;
   overflow:hidden;
+  margin-bottom:7px;
 }
 
-th,td{
-  padding:14px;
-  text-align:center;
-  border-bottom:1px solid #26364d;
+.cp-coins{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  max-width:115px;
+  gap:2px;
 }
 
-th{
-  background:#17243a;
-  color:#00e5ff;
+.coin{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#fff3a0,#ffd000 40%,#b57900);
+  border:2px solid #fff0a0;
+  color:#3b2700;
+  font-weight:900;
+  font-size:9px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 8px #dba900;
 }
 
-td{
-  color:#d5dce8;
+.cp-name{
+  font-size:18px;
+  font-weight:bold;
+  margin:5px;
 }
 
-/* modal */
-
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:3000;
-  background:#000b;
-  padding:30px 15px;
+.price{
+  color:#ffd000;
+  font-weight:bold;
+  margin:8px 0;
 }
 
-.modal-box{
-  max-width:550px;
-  margin:30px auto;
-  background:#101a2b;
-  border:1px solid #00d9ff;
-  border-radius:17px;
-  padding:25px;
-}
-
-.close{
-  float:left;
-  color:#ff6375;
-  font-size:25px;
-  cursor:pointer;
-}
-
-.input{
+.buy{
   width:100%;
-  background:#080f1b;
-  color:#fff;
-  border:1px solid #293c58;
+  border:0;
   border-radius:8px;
+  padding:10px;
+  background:#ffd000;
+  color:#111;
+  font-weight:900;
+}
+
+.buy:hover{
+  background:#fff;
+}
+
+/* Wallet */
+
+.wallet h2{
+  color:#ffd000;
+  margin-bottom:15px;
+}
+
+.balance{
+  background:#05080b;
+  border:1px solid #555;
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.balance small{
+  color:#aaa;
+}
+
+.balance strong{
+  display:block;
+  font-size:28px;
+  color:#ffd000;
+  margin-top:8px;
+}
+
+.wallet-buttons{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+}
+
+.wallet-buttons button{
+  background:#111820;
+  color:#fff;
+  border:1px solid #555;
+  padding:12px 5px;
+  border-radius:9px;
+}
+
+.wallet-buttons button:hover{
+  border-color:#ffd000;
+}
+
+.wallet-main{
+  width:100%;
+  margin-top:12px;
+  background:#ffd000;
+  border:0;
+  padding:13px;
+  border-radius:9px;
+  font-weight:bold;
+}
+
+.coupon{
+  margin-top:20px;
+  border-top:1px solid #333;
+  padding-top:20px;
+}
+
+.coupon input{
+  width:100%;
+  padding:13px;
+  border-radius:8px;
+  border:1px solid #555;
+  background:#05080b;
+  color:white;
+  margin:10px 0;
+}
+
+.coupon button{
+  width:100%;
   padding:12px;
-  margin:7px 0 15px;
+  border:0;
+  border-radius:8px;
+  background:#ffd000;
+  font-weight:bold;
+}
+
+/* Products */
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.product{
+  background:#090e13;
+  border:1px solid #414b54;
+  border-radius:16px;
+  overflow:hidden;
+  transition:.2s;
+}
+
+.product:hover{
+  transform:translateY(-5px);
+  border-color:#ffd000;
+}
+
+.product-img{
+  height:210px;
+  background:#111 center/cover no-repeat;
+}
+
+.diamond{
+  background-image:url("images/diamond-gun.jpg");
+}
+
+.gold{
+  background-image:url("images/gold-gun.jpg");
+}
+
+.platinum{
+  background-image:url("images/platinum-gun.jpg");
+}
+
+.damascus{
+  background-image:url("images/damascus-gun.jpg");
+}
+
+.product-body{
+  padding:15px;
+}
+
+.product h3{
+  color:#ffd000;
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.old-price{
+  color:#888;
+  text-decoration:line-through;
+}
+
+.new-price{
+  color:#fff;
+  font-size:22px;
+  font-weight:bold;
+  margin:5px 0 12px;
+}
+
+.discount{
+  display:inline-block;
+  background:#e40000;
+  padding:5px 9px;
+  border-radius:6px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.cart{
+  width:100%;
+  border:0;
+  background:#ffd000;
+  color:#111;
+  padding:12px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+/* Cart */
+
+.cart-box{
+  position:fixed;
+  left:20px;
+  bottom:20px;
+  background:#10161b;
+  border:2px solid #ffd000;
+  border-radius:15px;
+  padding:15px 20px;
+  z-index:999;
+  box-shadow:0 0 25px #000;
+}
+
+.cart-box strong{
+  color:#ffd000;
 }
 
 footer{
+  margin-top:40px;
+  background:#070a0d;
+  border-top:2px solid #ffd000;
+  padding:30px;
   text-align:center;
-  padding:35px 20px;
-  background:#04070c;
-  color:#78869b;
-  border-top:1px solid #1d2a40;
+  color:#999;
+}
+
+footer b{
+  color:#ffd000;
+}
+
+@media(max-width:1100px){
+  .cp-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .cp-layout{
+    grid-template-columns:1fr;
+  }
 }
 
 @media(max-width:700px){
+  .nav{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
 
-  .header-box{
-    flex-direction:column;
+  .menu{
+    width:100%;
+    justify-content:center;
+    gap:12px;
+    font-size:13px;
+  }
+
+  .hero{
+    height:220px;
+  }
+
+  .hero-content{
+    right:20px;
   }
 
   .hero h1{
-    font-size:32px;
+    font-size:28px;
   }
 
-  .profile{
+  .cp-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .products{
     grid-template-columns:1fr;
-  }
-
-  .stats{
-    grid-template-columns:1fr;
-  }
-
-  th,td{
-    padding:8px 4px;
-    font-size:12px;
   }
 }
 </style>
@@ -425,707 +467,417 @@ footer{
 <body>
 
 <header>
-
-  <div class="header-box">
+  <div class="nav">
 
     <div class="logo">
-      ALCATRAZ CODM
+      ALCATRAZ
+      <span>CODM</span>
     </div>
 
-    <div class="user-top">
+    <ul class="menu">
+      <li><a href="#cp">خرید CP</a></li>
+      <li><a href="#products">محصولات</a></li>
+      <li><a href="#wallet">کیف پول</a></li>
+    </ul>
 
-      <div class="avatar-small">
-        👤
-      </div>
-
-      <span>
-        Pooyan
-      </span>
-
+    <div class="wallet-mini">
+      💰 موجودی:
+      <span id="miniBalance">0</span>
+      تومان
     </div>
 
   </div>
-
 </header>
 
-
-<nav>
-
-  <div class="nav-box">
-
-    <a href="#home">خانه</a>
-
-    <a href="#tournaments">
-      تورنمنت‌ها
-    </a>
-
-    <a href="#profile">
-      پروفایل
-    </a>
-
-    <a href="#leaderboard">
-      لیدربورد
-    </a>
-
-    <a href="#rules">
-      قوانین
-    </a>
-
+<section class="hero">
+  <div class="hero-content">
+    <h1>ALCATRAZ CODM</h1>
+    <p>فروشگاه رسمی CP و محصولات کالاف دیوتی موبایل</p>
   </div>
+</section>
 
-</nav>
+<div class="container">
 
+<!-- CP -->
 
-<section class="hero" id="home">
+<h2 class="title" id="cp">💎 خرید CP</h2>
 
-  <h1>
-    ALCATRAZ CODM
-  </h1>
+<div class="cp-layout">
 
-  <h2>
-    🎮 مرکز رسمی مسابقات کالاف دیوتی موبایل
-  </h2>
+<section class="cp-section">
 
-  <p>
-    وارد تورنمنت شو، ثبت‌نام کن، رقابت کن،
-    امتیاز بگیر و رتبه خودت را بالا ببر.
-  </p>
-
-  <a class="btn" href="#tournaments">
-    مشاهده تورنمنت‌ها
-  </a>
+<div class="cp-grid" id="cpGrid"></div>
 
 </section>
 
-
-<!-- TOURNAMENTS -->
-
-<section class="section" id="tournaments">
-
-  <div class="title">
-
-    <h2>
-      🏆 تورنمنت‌ها
-    </h2>
-
-    <p>
-      مسابقات فعال و آینده
-    </p>
-
-  </div>
-
-
-  <div class="filters">
-
-    <button class="filter">
-      همه
-    </button>
-
-    <button class="filter">
-      1v1
-    </button>
-
-    <button class="filter">
-      Multiplayer
-    </button>
-
-    <button class="filter">
-      Battle Royale
-    </button>
-
-  </div>
-
-
-  <div class="tournaments">
-
-
-    <!-- Tournament 1 -->
-
-    <div class="tournament">
-
-      <img
-      class="tournament-image"
-      src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80">
-
-      <div class="tournament-body">
-
-        <span class="status open">
-          ● ثبت‌نام باز
-        </span>
-
-        <h3>
-          🔥 Alcatraz 1v1 Championship
-        </h3>
-
-        <div class="info">
-          <span>حالت</span>
-          <span>1v1</span>
-        </div>
-
-        <div class="info">
-          <span>نقشه</span>
-          <span>Kill House</span>
-        </div>
-
-        <div class="info">
-          <span>بازیکنان</span>
-          <span>32 / 64</span>
-        </div>
-
-        <div class="info">
-          <span>شروع</span>
-          <span>جمعه 20:00</span>
-        </div>
-
-        <div class="prize">
-          🏆 جایزه: 200,000 تومان
-        </div>
-
-        <button class="btn"
-        onclick="joinTournament('Alcatraz 1v1 Championship')">
-
-          ثبت‌نام
-
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <!-- Tournament 2 -->
-
-    <div class="tournament">
-
-      <img
-      class="tournament-image"
-      src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80">
-
-      <div class="tournament-body">
-
-        <span class="status open">
-          ● ثبت‌نام باز
-        </span>
-
-        <h3>
-          ⚔️ CODM Multiplayer Cup
-        </h3>
-
-        <div class="info">
-          <span>حالت</span>
-          <span>5v5</span>
-        </div>
-
-        <div class="info">
-          <span>نقشه</span>
-          <span>Raid</span>
-        </div>
-
-        <div class="info">
-          <span>تیم‌ها</span>
-          <span>12 / 16</span>
-        </div>
-
-        <div class="info">
-          <span>شروع</span>
-          <span>شنبه 21:00</span>
-        </div>
-
-        <div class="prize">
-          🏆 جایزه: 500,000 تومان
-        </div>
-
-        <button class="btn"
-        onclick="joinTournament('CODM Multiplayer Cup')">
-
-          ثبت‌نام
-
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <!-- Tournament 3 -->
-
-    <div class="tournament">
-
-      <img
-      class="tournament-image"
-      src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80">
-
-      <div class="tournament-body">
-
-        <span class="status soon">
-          ● به‌زودی
-        </span>
-
-        <h3>
-          👑 Legendary Battle
-        </h3>
-
-        <div class="info">
-          <span>حالت</span>
-          <span>Squad</span>
-        </div>
-
-        <div class="info">
-          <span>نقشه</span>
-          <span>Alcatraz</span>
-        </div>
-
-        <div class="info">
-          <span>تیم‌ها</span>
-          <span>64 تیم</span>
-        </div>
-
-        <div class="info">
-          <span>شروع</span>
-          <span>به‌زودی</span>
-        </div>
-
-        <div class="prize">
-          🏆 جایزه: 1,000,000 تومان
-        </div>
-
-        <button class="btn"
-        onclick="comingSoon()">
-
-          به‌زودی
-
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <!-- Tournament 4 -->
-
-    <div class="tournament">
-
-      <img
-      class="tournament-image"
-      src="https://images.unsplash.com/photo-1603481546238-487240415921?auto=format&fit=crop&w=900&q=80">
-
-      <div class="tournament-body">
-
-        <span class="status soon">
-          ● به‌زودی
-        </span>
-
-        <h3>
-          🎯 Sniper 1v1
-        </h3>
-
-        <div class="info">
-          <span>حالت</span>
-          <span>1v1 Sniper</span>
-        </div>
-
-        <div class="info">
-          <span>نقشه</span>
-          <span>Kill House</span>
-        </div>
-
-        <div class="info">
-          <span>ظرفیت</span>
-          <span>32 بازیکن</span>
-        </div>
-
-        <div class="info">
-          <span>شروع</span>
-          <span>به‌زودی</span>
-        </div>
-
-        <div class="prize">
-          🏆 جایزه: 150,000 تومان
-        </div>
-
-        <button class="btn"
-        onclick="comingSoon()">
-
-          به‌زودی
-
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PROFILE -->
-
-<section class="section" id="profile">
-
-  <div class="title">
-
-    <h2>
-      👤 پروفایل بازیکن
-    </h2>
-
-    <p>
-      اطلاعات و آمار بازیکن
-    </p>
-
-  </div>
-
-
-  <div class="profile">
-
-    <div class="profile-card">
-
-      <div class="avatar">
-        🎮
-      </div>
-
-      <div class="profile-name">
-        Pooyan
-      </div>
-
-      <div class="profile-id">
-        ID: #117CODM
-      </div>
-
-      <div class="rank-big">
-        👑 Legendary
-      </div>
-
-      <p>
-        عضو AlcatrazCODM
-      </p>
-
-      <br>
-
-      <button class="btn"
-      onclick="editProfile()">
-        ویرایش پروفایل
-      </button>
-
-    </div>
-
-
-    <div class="stats-card">
-
-      <h2>
-        📊 آمار بازیکن
-      </h2>
-
-      <br>
-
-      <div class="stats">
-
-        <div class="stat">
-          <strong>24</strong>
-          <span>تورنمنت</span>
-        </div>
-
-        <div class="stat">
-          <strong>17</strong>
-          <span>برد</span>
-        </div>
-
-        <div class="stat">
-          <strong>5820</strong>
-          <span>امتیاز</span>
-        </div>
-
-        <div class="stat">
-          <strong>71%</strong>
-          <span>Win Rate</span>
-        </div>
-
-        <div class="stat">
-          <strong>8</strong>
-          <span>قهرمانی</span>
-        </div>
-
-        <div class="stat">
-          <strong>#12</strong>
-          <span>رتبه جهانی</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- LEADERBOARD -->
-
-<section class="section" id="leaderboard">
-
-  <div class="title">
-
-    <h2>
-      🥇 لیدربورد
-    </h2>
-
-    <p>
-      برترین بازیکنان AlcatrazCODM
-    </p>
-
-  </div>
-
-
-  <table>
-
-    <tr>
-      <th>رتبه</th>
-      <th>بازیکن</th>
-      <th>برد</th>
-      <th>امتیاز</th>
-      <th>رنک</th>
-    </tr>
-
-    <tr>
-      <td>🥇 1</td>
-      <td>AlcatrazPro</td>
-      <td>31</td>
-      <td>7200</td>
-      <td>👑 Legendary</td>
-    </tr>
-
-    <tr>
-      <td>🥈 2</td>
-      <td>ShadowCODM</td>
-      <td>28</td>
-      <td>6800</td>
-      <td>👑 Legendary</td>
-    </tr>
-
-    <tr>
-      <td>🥉 3</td>
-      <td>GhostPlayer</td>
-      <td>25</td>
-      <td>6410</td>
-      <td>👑 Legendary</td>
-    </tr>
-
-    <tr>
-      <td>4</td>
-      <td>Pooyan</td>
-      <td>17</td>
-      <td>5820</td>
-      <td>👑 Legendary</td>
-    </tr>
-
-  </table>
-
-</section>
-
-
-<!-- RULES -->
-
-<section class="section" id="rules">
-
-  <div class="title">
-
-    <h2>
-      📜 قوانین تورنمنت
-    </h2>
-
-    <p>
-      قوانین نمونه مسابقات
-    </p>
-
-  </div>
-
-  <div class="tournaments">
-
-    <div class="tournament">
-      <div class="tournament-body">
-        <h3>🎮 قوانین بازی</h3>
-        <p>
-          بازیکنان باید در زمان مشخص وارد روم شوند.
-          استفاده از تقلب و نرم‌افزار غیرمجاز ممنوع است.
-        </p>
-      </div>
-    </div>
-
-    <div class="tournament">
-      <div class="tournament-body">
-        <h3>⏰ زمان مسابقه</h3>
-        <p>
-          در صورت حاضر نشدن بازیکن در زمان تعیین‌شده،
-          امکان حذف از مسابقه وجود دارد.
-        </p>
-      </div>
-    </div>
-
-    <div class="tournament">
-      <div class="tournament-body">
-        <h3>🚫 تخلف</h3>
-        <p>
-          تقلب، باگ‌گیری، استفاده از ابزار غیرمجاز
-          و رفتار نامناسب می‌تواند باعث حذف شود.
-        </p>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<footer>
-
-  <p>
-    © 2026 AlcatrazCODM
-  </p>
-
-  <p>
-    مرکز مسابقات Call of Duty Mobile
-  </p>
-
-</footer>
-
-
-<!-- REGISTER MODAL -->
-
-<div class="modal" id="registerModal">
-
-  <div class="modal-box">
-
-    <span class="close"
-    onclick="closeModal()">
-      ✕
-    </span>
-
-    <h2>
-      🏆 ثبت‌نام تورنمنت
-    </h2>
-
-    <br>
-
-    <p id="selectedTournament">
-    </p>
-
-    <br>
-
-    <label>
-      نام بازیکن
-    </label>
-
-    <input
-    class="input"
-    id="playerName"
-    placeholder="نام داخل بازی">
-
-
-    <label>
-      UID کالاف دیوتی
-    </label>
-
-    <input
-    class="input"
-    id="playerUID"
-    placeholder="UID">
-
-
-    <button class="btn"
-    onclick="submitRegistration()">
-
-      ثبت‌نام نهایی
-
-    </button>
-
-  </div>
+<!-- Wallet -->
+
+<aside class="wallet" id="wallet">
+
+<h2>💰 کیف پول</h2>
+
+<div class="balance">
+  <small>موجودی فعلی</small>
+  <strong>
+    <span id="balance">0</span>
+    تومان
+  </strong>
+</div>
+
+<div class="wallet-buttons">
+
+<button onclick="addMoney(100000)">100,000</button>
+<button onclick="addMoney(200000)">200,000</button>
+<button onclick="addMoney(500000)">500,000</button>
+<button onclick="addMoney(1000000)">1,000,000</button>
+<button onclick="addMoney(2000000)">2,000,000</button>
+<button onclick="addMoney(5000000)">5,000,000</button>
 
 </div>
 
+<button class="wallet-main" onclick="showWallet()">
+💳 افزایش موجودی
+</button>
+
+<div class="coupon">
+
+<h3>🎟️ کد تخفیف</h3>
+
+<input id="couponInput" placeholder="کد تخفیف را وارد کنید">
+
+<button onclick="applyCoupon()">
+اعمال کد
+</button>
+
+<p id="couponMessage" style="margin-top:10px"></p>
+
+</div>
+
+</aside>
+
+</div>
+
+<!-- Products -->
+
+<h2 class="title" id="products">🔥 محصولات ویژه</h2>
+
+<div class="products">
+
+<!-- Diamond -->
+
+<div class="product">
+
+<div class="product-img diamond"></div>
+
+<div class="product-body">
+
+<span class="discount">50% تخفیف</span>
+
+<h3>💎 Diamond Gun</h3>
+
+<div class="old-price">1,000,000 تومان</div>
+
+<div class="new-price">500,000 تومان</div>
+
+<button class="cart"
+onclick="buyProduct('Diamond Gun',500000)">
+🛒 خرید محصول
+</button>
+
+</div>
+</div>
+
+<!-- Gold -->
+
+<div class="product">
+
+<div class="product-img gold"></div>
+
+<div class="product-body">
+
+<span class="discount">50% تخفیف</span>
+
+<h3>🥇 Gold Gun</h3>
+
+<div class="old-price">500,000 تومان</div>
+
+<div class="new-price">250,000 تومان</div>
+
+<button class="cart"
+onclick="buyProduct('Gold Gun',250000)">
+🛒 خرید محصول
+</button>
+
+</div>
+</div>
+
+<!-- Platinum -->
+
+<div class="product">
+
+<div class="product-img platinum"></div>
+
+<div class="product-body">
+
+<span class="discount">20% تخفیف</span>
+
+<h3>⚪ Platinum Gun</h3>
+
+<div class="old-price">5,000,000 تومان</div>
+
+<div class="new-price">4,000,000 تومان</div>
+
+<button class="cart"
+onclick="buyProduct('Platinum Gun',4000000)">
+🛒 خرید محصول
+</button>
+
+</div>
+</div>
+
+<!-- Damascus -->
+
+<div class="product">
+
+<div class="product-img damascus"></div>
+
+<div class="product-body">
+
+<span class="discount">25% تخفیف</span>
+
+<h3>🌈 Damascus Gun</h3>
+
+<div class="old-price">10,000,000 تومان</div>
+
+<div class="new-price">7,500,000 تومان</div>
+
+<button class="cart"
+onclick="buyProduct('Damascus Gun',7500000)">
+🛒 خرید محصول
+</button>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="cart-box">
+🛒 سبد خرید:
+<strong id="cartCount">0</strong>
+محصول
+</div>
+
+<footer>
+  <b>ALCATRAZCODM</b>
+  <br><br>
+  فروشگاه CP و محصولات Call of Duty Mobile
+  <br><br>
+  © 2026 AlcatrazCODM
+</footer>
 
 <script>
 
-let selectedTournament="";
+/* =========================
+   CP PRODUCTS
+========================= */
 
+const cpProducts = [
+  [80,210000],
+  [160,415000],
+  [240,620000],
+  [320,825000],
+  [400,1030000],
+  [420,1240000],
+  [480,1240000],
+  [500,1320000],
+  [560,1500000],
+  [580,1650000],
+  [660,1860000],
+  [720,1860000],
+  [740,2060000],
+  [880,2270000],
+  [960,2480000],
+  [1040,2700000],
+  [1120,4550000],
+  [1300,3510000],
+  [1760,2800000]
+];
 
-function joinTournament(name){
+const cpGrid = document.getElementById("cpGrid");
 
-  selectedTournament=name;
+function formatMoney(number){
+  return number.toLocaleString("fa-IR");
+}
 
-  document.getElementById("selectedTournament").innerHTML=
-  "تورنمنت انتخاب‌شده: <b>"+name+"</b>";
+function createCoins(cp){
 
-  document.getElementById("registerModal").style.display="block";
+  let amount = 1;
+
+  if(cp >= 160) amount = 2;
+  if(cp >= 320) amount = 3;
+  if(cp >= 560) amount = 4;
+  if(cp >= 880) amount = 5;
+  if(cp >= 1300) amount = 7;
+  if(cp >= 1760) amount = 9;
+
+  let html = '<div class="cp-coins">';
+
+  for(let i=0;i<amount;i++){
+    html += `<div class="coin">CP</div>`;
+  }
+
+  html += '</div>';
+
+  return html;
+}
+
+cpProducts.forEach(item => {
+
+  const cp = item[0];
+  const price = item[1];
+
+  const card = document.createElement("div");
+
+  card.className = "cp-card";
+
+  card.innerHTML = `
+
+    <div class="cp-image">
+      ${createCoins(cp)}
+    </div>
+
+    <div class="cp-name">
+      ${cp} CP
+    </div>
+
+    <div class="price">
+      ${formatMoney(price)} تومان
+    </div>
+
+    <button class="buy"
+      onclick="buyProduct('${cp} CP',${price})">
+      🛒 خرید
+    </button>
+
+  `;
+
+  cpGrid.appendChild(card);
+
+});
+
+/* =========================
+   WALLET
+========================= */
+
+let balance = Number(localStorage.getItem("alcatrazBalance")) || 0;
+
+function updateBalance(){
+
+  document.getElementById("balance").innerText =
+    formatMoney(balance);
+
+  document.getElementById("miniBalance").innerText =
+    formatMoney(balance);
+
+  localStorage.setItem(
+    "alcatrazBalance",
+    balance
+  );
+}
+
+function addMoney(amount){
+
+  balance += amount;
+
+  updateBalance();
+
+  alert(
+    `${formatMoney(amount)} تومان به کیف پول اضافه شد.`
+  );
+}
+
+function showWallet(){
+
+  alert(
+    "برای افزایش واقعی موجودی، در مرحله بعد درگاه پرداخت به کیف پول متصل می‌شود."
+  );
 
 }
 
+/* =========================
+   COUPON
+========================= */
 
-function closeModal(){
+function applyCoupon(){
 
-  document.getElementById("registerModal").style.display="none";
+  const code =
+    document.getElementById("couponInput").value.trim();
+
+  const message =
+    document.getElementById("couponMessage");
+
+  if(code === "ALCATRAZ50"){
+
+    message.style.color = "#00ff66";
+
+    message.innerText =
+      "کد تخفیف با موفقیت فعال شد.";
+
+  }else{
+
+    message.style.color = "#ff4444";
+
+    message.innerText =
+      "کد تخفیف معتبر نیست.";
+
+  }
 
 }
 
+/* =========================
+   PURCHASE
+========================= */
 
-function submitRegistration(){
+let cartCount = 0;
 
-  let name=
-  document.getElementById("playerName").value;
+function buyProduct(name, price){
 
-  let uid=
-  document.getElementById("playerUID").value;
+  if(balance < price){
 
-  if(name==="" || uid===""){
-
-    alert("لطفاً نام بازیکن و UID را وارد کنید.");
+    alert(
+      "موجودی کیف پول برای خرید این محصول کافی نیست."
+    );
 
     return;
-
   }
 
-  alert(
-    "ثبت‌نام با موفقیت ثبت شد! ✅\n\n"+
-    "بازیکن: "+name+
-    "\nتورنمنت: "+selectedTournament
-  );
+  const answer =
+    confirm(
+      `${name}\n\nقیمت: ${formatMoney(price)} تومان\n\nآیا خرید انجام شود؟`
+    );
 
-  closeModal();
+  if(!answer) return;
 
-}
+  balance -= price;
 
+  cartCount++;
 
-function comingSoon(){
+  document.getElementById("cartCount").innerText =
+    cartCount;
 
-  alert(
-    "این تورنمنت هنوز شروع نشده است. 🔔"
-  );
-
-}
-
-
-function editProfile(){
+  updateBalance();
 
   alert(
-    "بخش ویرایش پروفایل در نسخه بعدی فعال می‌شود."
+    `خرید ${name} با موفقیت ثبت شد.`
   );
 
 }
 
-
-window.onclick=function(event){
-
-  let modal=
-  document.getElementById("registerModal");
-
-  if(event.target===modal){
-
-    closeModal();
-
-  }
-
-}
+updateBalance();
 
 </script>
 
 </body>
-        </html>
+  </html>
