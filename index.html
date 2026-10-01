@@ -75,4 +75,76 @@ a{color:inherit;text-decoration:none}
 .tour-bottom{display:flex;align-items:center;justify-content:space-between;gap:4px}
 .tour-bottom .btn{padding:6px 10px;font-size:10px}
 .tiny{font-size:9px;color:var(--cyan)}
-     </style>
+     </style><section class="panel section" id="featured">
+  <div class="section-head">
+    <h2>⚔️ تورنومنت منتخب</h2>
+    <span class="tiny">FEATURED EVENT</span>
+  </div>
+  <div class="feature-main">
+    <div class="feature-art">🏝️</div>
+    <div class="feature-info">
+      <h3>Battle Royale</h3>
+      <p>رقابت بتل رویال با ظرفیت ۱۰۰ نفر. برای شرکت، قوانین را بخوان و اطلاعات مسابقه را بررسی کن.</p>
+      <div class="stats">
+        <div class="stat">ظرفیت<b>۱۰۰ نفر</b></div>
+        <div class="stat">ورودی<b>۲۰٬۰۰۰ تومان</b></div>
+      </div>
+      <div class="feature-actions">
+        <span class="ready">● ثبت‌نام آزمایشی</span>
+        <button class="btn" onclick="openTournament(1)">مشاهده و شرکت</button>
+      </div>
+    </div>
+  </div>
+  <div class="prizes">
+    <div class="prize">🥇 نفر اول<b>۱,۰۰۰,۰۰۰ تومان</b></div>
+    <div class="prize">🥈 نفر دوم<b>۷۵۰,۰۰۰ تومان</b></div>
+    <div class="prize">🥉 نفر سوم<b>۵۰۰,۰۰۰ تومان</b></div>
+  </div>
+</section>
+
+<section class="panel section">
+  <div class="section-head">
+    <h2>📜 قوانین تورنومنت</h2>
+    <span class="tiny">RULES</span>
+  </div>
+  <ol class="rules-list">
+    <li>هزینه شرکت در تورنومنت ۲۰٬۰۰۰ تومان است.</li>
+    <li>وقتی ظرفیت تورنومنت تکمیل شود، بازی شروع می‌شود.</li>
+    <li>پس از شروع مسابقه، ۵ دقیقه برای ورود به بازی فرصت داری.</li>
+    <li>استفاده از تقلب و رفتار غیرورزشی ممنوع است.</li>
+    <li>جزئیات نهایی مسابقه پیش از ثبت‌نام اعلام می‌شود.</li>
+  </ol>
+  <div style="margin-top:12px">
+    <button class="btn ghost" onclick="openTournament(1)">مشاهده جزئیات کامل</button>
+  </div>
+     </section><div class="team-participants">
+  <section class="panel section">
+    <div class="section-head">
+      <h2>🛡️ تیم‌ها</h2>
+      <div class="tabs">
+        <button class="tab active" onclick="teamFilter('all',this)">همه</button>
+        <button class="tab" onclick="teamFilter('ready',this)">آماده</button>
+      </div>
+    </div>
+    <div id="teams"></div>
+  </section>
+
+  <section class="panel section">
+    <div class="section-head">
+      <h2>👥 شرکت‌کنندگان</h2>
+      <div class="tabs">
+        <button class="tab active" onclick="participantFilter('all',this)">همه</button>
+        <button class="tab" onclick="participantFilter('solo',this)">فردی</button>
+      </div>
+    </div>
+    <div id="participants"></div>
+  </section>
+</div>
+
+<section class="panel section" id="all-tournaments">
+  <div class="section-head">
+    <h2>📅 مسابقات آینده</h2>
+    <span class="tiny">UPCOMING</span>
+  </div>
+  <div id="upcoming" class="tourney-grid"></div>
+</section>
