@@ -1,883 +1,966 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AlcatrazCODM | فروشگاه CODM</title>
-
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  font-family:Tahoma,Arial,sans-serif;
-  background:#05080b;
-  color:#fff;
-}
-
-button{
-  font-family:inherit;
-  cursor:pointer;
-}
-
-header{
-  background:#080b0e;
-  border-bottom:2px solid #f5c400;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.nav{
-  max-width:1400px;
-  margin:auto;
-  min-height:80px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:10px 25px;
-  gap:20px;
-}
-
-.logo{
-  font-size:25px;
-  font-weight:900;
-  color:#ffd000;
-  line-height:1.1;
-}
-
-.logo span{
-  display:block;
-  color:#fff;
-  font-size:13px;
-  letter-spacing:3px;
-}
-
-.menu{
-  display:flex;
-  gap:25px;
-  list-style:none;
-}
-
-.menu a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.menu a:hover{
-  color:#ffd000;
-}
-
-.wallet-mini{
-  background:#11171d;
-  border:1px solid #ffd000;
-  padding:10px 15px;
-  border-radius:12px;
-  color:#ffd000;
-  font-weight:bold;
-}
-
-.hero{
-  max-width:1400px;
-  margin:20px auto;
-  height:270px;
-  border-radius:18px;
-  overflow:hidden;
-  position:relative;
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.2),rgba(0,0,0,.75)),
-    url("images/alcatraz-banner.jpg") center/cover;
-  border:1px solid #5d4b00;
-}
-
-.hero-content{
-  position:absolute;
-  right:45px;
-  top:50%;
-  transform:translateY(-50%);
-}
-
-.hero h1{
-  font-size:42px;
-  color:#ffd000;
-  margin-bottom:10px;
-}
-
-.hero p{
-  font-size:18px;
-}
-
-.container{
-  max-width:1400px;
-  margin:auto;
-  padding:20px;
-}
-
-.title{
-  font-size:28px;
-  color:#ffd000;
-  margin:20px 0;
-  border-right:5px solid #ffd000;
-  padding-right:12px;
-}
-
-/* CP */
-
-.cp-layout{
-  display:grid;
-  grid-template-columns:1fr 330px;
-  gap:20px;
-}
-
-.cp-section,
-.wallet{
-  background:#090e13;
-  border:1px solid #4d430f;
-  border-radius:18px;
-  padding:20px;
-}
-
-.cp-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:12px;
-}
-
-.cp-card{
-  background:linear-gradient(145deg,#111a20,#06090c);
-  border:1px solid #39424a;
-  border-radius:14px;
-  padding:12px;
-  text-align:center;
-  transition:.2s;
-}
-
-.cp-card:hover{
-  transform:translateY(-4px);
-  border-color:#ffd000;
-}
-
-.cp-image{
-  height:85px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  margin-bottom:7px;
-}
-
-.cp-coins{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  max-width:115px;
-  gap:2px;
-}
-
-.coin{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#fff3a0,#ffd000 40%,#b57900);
-  border:2px solid #fff0a0;
-  color:#3b2700;
-  font-weight:900;
-  font-size:9px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 0 8px #dba900;
-}
-
-.cp-name{
-  font-size:18px;
-  font-weight:bold;
-  margin:5px;
-}
-
-.price{
-  color:#ffd000;
-  font-weight:bold;
-  margin:8px 0;
-}
-
-.buy{
-  width:100%;
-  border:0;
-  border-radius:8px;
-  padding:10px;
-  background:#ffd000;
-  color:#111;
-  font-weight:900;
-}
-
-.buy:hover{
-  background:#fff;
-}
-
-/* Wallet */
-
-.wallet h2{
-  color:#ffd000;
-  margin-bottom:15px;
-}
-
-.balance{
-  background:#05080b;
-  border:1px solid #555;
-  border-radius:12px;
-  padding:20px;
-  text-align:center;
-  margin-bottom:15px;
-}
-
-.balance small{
-  color:#aaa;
-}
-
-.balance strong{
-  display:block;
-  font-size:28px;
-  color:#ffd000;
-  margin-top:8px;
-}
-
-.wallet-buttons{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:8px;
-}
-
-.wallet-buttons button{
-  background:#111820;
-  color:#fff;
-  border:1px solid #555;
-  padding:12px 5px;
-  border-radius:9px;
-}
-
-.wallet-buttons button:hover{
-  border-color:#ffd000;
-}
-
-.wallet-main{
-  width:100%;
-  margin-top:12px;
-  background:#ffd000;
-  border:0;
-  padding:13px;
-  border-radius:9px;
-  font-weight:bold;
-}
-
-.coupon{
-  margin-top:20px;
-  border-top:1px solid #333;
-  padding-top:20px;
-}
-
-.coupon input{
-  width:100%;
-  padding:13px;
-  border-radius:8px;
-  border:1px solid #555;
-  background:#05080b;
-  color:white;
-  margin:10px 0;
-}
-
-.coupon button{
-  width:100%;
-  padding:12px;
-  border:0;
-  border-radius:8px;
-  background:#ffd000;
-  font-weight:bold;
-}
-
-/* Products */
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-}
-
-.product{
-  background:#090e13;
-  border:1px solid #414b54;
-  border-radius:16px;
-  overflow:hidden;
-  transition:.2s;
-}
-
-.product:hover{
-  transform:translateY(-5px);
-  border-color:#ffd000;
-}
-
-.product-img{
-  height:210px;
-  background:#111 center/cover no-repeat;
-}
-
-.diamond{
-  background-image:url("images/diamond-gun.jpg");
-}
-
-.gold{
-  background-image:url("images/gold-gun.jpg");
-}
-
-.platinum{
-  background-image:url("images/platinum-gun.jpg");
-}
-
-.damascus{
-  background-image:url("images/damascus-gun.jpg");
-}
-
-.product-body{
-  padding:15px;
-}
-
-.product h3{
-  color:#ffd000;
-  font-size:22px;
-  margin-bottom:8px;
-}
-
-.old-price{
-  color:#888;
-  text-decoration:line-through;
-}
-
-.new-price{
-  color:#fff;
-  font-size:22px;
-  font-weight:bold;
-  margin:5px 0 12px;
-}
-
-.discount{
-  display:inline-block;
-  background:#e40000;
-  padding:5px 9px;
-  border-radius:6px;
-  font-weight:bold;
-  margin-bottom:10px;
-}
-
-.cart{
-  width:100%;
-  border:0;
-  background:#ffd000;
-  color:#111;
-  padding:12px;
-  border-radius:8px;
-  font-weight:bold;
-}
-
-/* Cart */
-
-.cart-box{
-  position:fixed;
-  left:20px;
-  bottom:20px;
-  background:#10161b;
-  border:2px solid #ffd000;
-  border-radius:15px;
-  padding:15px 20px;
-  z-index:999;
-  box-shadow:0 0 25px #000;
-}
-
-.cart-box strong{
-  color:#ffd000;
-}
-
-footer{
-  margin-top:40px;
-  background:#070a0d;
-  border-top:2px solid #ffd000;
-  padding:30px;
-  text-align:center;
-  color:#999;
-}
-
-footer b{
-  color:#ffd000;
-}
-
-@media(max-width:1100px){
-  .cp-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .cp-layout{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:700px){
-  .nav{
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  .menu{
-    width:100%;
-    justify-content:center;
-    gap:12px;
-    font-size:13px;
-  }
-
-  .hero{
-    height:220px;
-  }
-
-  .hero-content{
-    right:20px;
-  }
-
-  .hero h1{
-    font-size:28px;
-  }
-
-  .cp-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .products{
-    grid-template-columns:1fr;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ALCATRAZ CODM | CP STORE</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Tahoma, sans-serif;
+    }
+
+    body {
+      background: #111;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+
+    header {
+      background: #171717;
+      border-bottom: 2px solid #f5c400;
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #f5c400;
+    }
+
+    .logo span {
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: #f5c400;
+    }
+
+    /* ===== HERO ===== */
+
+    .hero {
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.88)),
+        repeating-linear-gradient(
+          135deg,
+          #181818 0px,
+          #181818 12px,
+          #202020 12px,
+          #202020 24px
+        );
+      border-bottom: 1px solid #333;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 85px);
+      font-weight: 1000;
+      color: #f5c400;
+      text-shadow: 0 0 25px rgba(245,196,0,.25);
+    }
+
+    .hero h2 {
+      font-size: clamp(22px, 4vw, 38px);
+      margin: 15px 0;
+    }
+
+    .hero p {
+      color: #bbb;
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 28px;
+      background: #f5c400;
+      color: #111;
+      padding: 14px 35px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 900;
+      transition: .25s;
+    }
+
+    .hero-button:hover {
+      background: #fff;
+      transform: translateY(-3px);
+    }
+
+    /* ===== WALLET ===== */
+
+    .wallet {
+      width: 90%;
+      max-width: 1100px;
+      margin: -45px auto 60px;
+      position: relative;
+      z-index: 10;
+      background: #1c1c1c;
+      border: 1px solid #383838;
+      border-right: 4px solid #f5c400;
+      padding: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    }
+
+    .wallet-info h3 {
+      color: #f5c400;
+      margin-bottom: 8px;
+    }
+
+    .balance {
+      font-size: 30px;
+      font-weight: 900;
+    }
+
+    .wallet button {
+      border: 0;
+      background: #f5c400;
+      color: #111;
+      padding: 13px 25px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* ===== SECTION ===== */
+
+    .section {
+      width: 90%;
+      max-width: 1200px;
+      margin: 70px auto;
+    }
+
+    .section-title {
+      border-right: 5px solid #f5c400;
+      padding-right: 15px;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+    }
+
+    .section-title p {
+      color: #888;
+      margin-top: 8px;
+    }
+
+    /* ===== CP CARDS ===== */
+
+    .cp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+    }
+
+    .cp-card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      padding: 25px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .cp-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 3px;
+      background: #f5c400;
+    }
+
+    .cp-card:hover {
+      transform: translateY(-7px);
+      border-color: #f5c400;
+      box-shadow: 0 12px 35px rgba(0,0,0,.5);
+    }
+
+    .cp-image {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #555, #171717);
+      border: 3px solid #f5c400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 1000;
+      color: #f5c400;
+    }
+
+    .cp-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .cp-price {
+      color: #f5c400;
+      font-size: 21px;
+      font-weight: 900;
+      margin: 12px 0;
+    }
+
+    .buy-btn {
+      width: 100%;
+      border: 0;
+      padding: 12px;
+      background: #f5c400;
+      color: #111;
+      font-weight: 900;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: .2s;
+    }
+
+    .buy-btn:hover {
+      background: #fff;
+    }
+
+    /* ===== FEATURES ===== */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .feature {
+      background: #191919;
+      border: 1px solid #303030;
+      padding: 25px;
+    }
+
+    .feature-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .feature h3 {
+      color: #f5c400;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #aaa;
+      line-height: 1.8;
+    }
+
+    /* ===== HOW ===== */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: #181818;
+      padding: 25px;
+      border-left: 3px solid #f5c400;
+    }
+
+    .number {
+      font-size: 35px;
+      color: #f5c400;
+      font-weight: 900;
+    }
+
+    .step h3 {
+      margin: 8px 0;
+    }
+
+    .step p {
+      color: #999;
+      line-height: 1.7;
+    }
+
+    /* ===== MODAL ===== */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.82);
+      z-index: 3000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-box {
+      width: 100%;
+      max-width: 430px;
+      background: #1c1c1c;
+      border: 1px solid #f5c400;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-box h2 {
+      color: #f5c400;
+      margin-bottom: 20px;
+    }
+
+    .modal-box input {
+      width: 100%;
+      padding: 13px;
+      background: #111;
+      color: #fff;
+      border: 1px solid #444;
+      margin-bottom: 15px;
+      outline: none;
+    }
+
+    .modal-box button {
+      width: 100%;
+      padding: 13px;
+      border: 0;
+      background: #f5c400;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      color: #fff;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer {
+      margin-top: 100px;
+      background: #0d0d0d;
+      border-top: 1px solid #333;
+      padding: 35px 20px;
+      text-align: center;
+      color: #777;
+    }
+
+    footer strong {
+      color: #f5c400;
+    }
+
+    /* ===== MOBILE ===== */
+
+    @media(max-width: 700px) {
+
+      header {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 14px;
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 430px;
+      }
+
+      .wallet {
+        margin-top: -30px;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .wallet-info {
+        width: 100%;
+      }
+
+      .cp-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cp-image {
+        width: 90px;
+        height: 90px;
+        font-size: 23px;
+      }
+
+      .cp-card h3 {
+        font-size: 18px;
+      }
+
+      .cp-price {
+        font-size: 17px;
+      }
+    }
+
+    @media(max-width: 430px) {
+      .cp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
+  <!-- HEADER -->
+
+  <header>
 
     <div class="logo">
-      ALCATRAZ
-      <span>CODM</span>
+      ALCATRAZ<span>CODM</span>
     </div>
 
-    <ul class="menu">
-      <li><a href="#cp">خرید CP</a></li>
-      <li><a href="#products">محصولات</a></li>
-      <li><a href="#wallet">کیف پول</a></li>
-    </ul>
+    <nav>
+      <a href="#home">خانه</a>
+      <a href="#cp">CP</a>
+      <a href="#wallet">کیف پول</a>
+      <a href="#guide">راهنما</a>
+    </nav>
 
-    <div class="wallet-mini">
-      💰 موجودی:
-      <span id="miniBalance">0</span>
-      تومان
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>KILL HOUSE</h1>
+
+      <h2>COD MOBILE CP STORE</h2>
+
+      <p>
+        فروشگاه CP و خدمات Call of Duty Mobile
+        با طراحی حرفه‌ای و سریع
+      </p>
+
+      <a href="#cp" class="hero-button">
+        مشاهده بسته‌های CP
+      </a>
+
     </div>
 
-  </div>
-</header>
+  </section>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>ALCATRAZ CODM</h1>
-    <p>فروشگاه رسمی CP و محصولات کالاف دیوتی موبایل</p>
-  </div>
-</section>
 
-<div class="container">
+  <!-- WALLET -->
 
-<!-- CP -->
+  <section class="wallet" id="wallet">
 
-<h2 class="title" id="cp">💎 خرید CP</h2>
+    <div class="wallet-info">
 
-<div class="cp-layout">
+      <h3>کیف پول شما</h3>
 
-<section class="cp-section">
+      <div class="balance">
+        <span id="balance">0</span> تومان
+      </div>
 
-<div class="cp-grid" id="cpGrid"></div>
-
-</section>
-
-<!-- Wallet -->
-
-<aside class="wallet" id="wallet">
-
-<h2>💰 کیف پول</h2>
-
-<div class="balance">
-  <small>موجودی فعلی</small>
-  <strong>
-    <span id="balance">0</span>
-    تومان
-  </strong>
-</div>
-
-<div class="wallet-buttons">
-
-<button onclick="addMoney(100000)">100,000</button>
-<button onclick="addMoney(200000)">200,000</button>
-<button onclick="addMoney(500000)">500,000</button>
-<button onclick="addMoney(1000000)">1,000,000</button>
-<button onclick="addMoney(2000000)">2,000,000</button>
-<button onclick="addMoney(5000000)">5,000,000</button>
-
-</div>
-
-<button class="wallet-main" onclick="showWallet()">
-💳 افزایش موجودی
-</button>
-
-<div class="coupon">
-
-<h3>🎟️ کد تخفیف</h3>
-
-<input id="couponInput" placeholder="کد تخفیف را وارد کنید">
-
-<button onclick="applyCoupon()">
-اعمال کد
-</button>
-
-<p id="couponMessage" style="margin-top:10px"></p>
-
-</div>
-
-</aside>
-
-</div>
-
-<!-- Products -->
-
-<h2 class="title" id="products">🔥 محصولات ویژه</h2>
-
-<div class="products">
-
-<!-- Diamond -->
-
-<div class="product">
-
-<div class="product-img diamond"></div>
-
-<div class="product-body">
-
-<span class="discount">50% تخفیف</span>
-
-<h3>💎 Diamond Gun</h3>
-
-<div class="old-price">1,000,000 تومان</div>
-
-<div class="new-price">500,000 تومان</div>
-
-<button class="cart"
-onclick="buyProduct('Diamond Gun',500000)">
-🛒 خرید محصول
-</button>
-
-</div>
-</div>
-
-<!-- Gold -->
-
-<div class="product">
-
-<div class="product-img gold"></div>
-
-<div class="product-body">
-
-<span class="discount">50% تخفیف</span>
-
-<h3>🥇 Gold Gun</h3>
-
-<div class="old-price">500,000 تومان</div>
-
-<div class="new-price">250,000 تومان</div>
-
-<button class="cart"
-onclick="buyProduct('Gold Gun',250000)">
-🛒 خرید محصول
-</button>
-
-</div>
-</div>
-
-<!-- Platinum -->
-
-<div class="product">
-
-<div class="product-img platinum"></div>
-
-<div class="product-body">
-
-<span class="discount">20% تخفیف</span>
-
-<h3>⚪ Platinum Gun</h3>
-
-<div class="old-price">5,000,000 تومان</div>
-
-<div class="new-price">4,000,000 تومان</div>
-
-<button class="cart"
-onclick="buyProduct('Platinum Gun',4000000)">
-🛒 خرید محصول
-</button>
-
-</div>
-</div>
-
-<!-- Damascus -->
-
-<div class="product">
-
-<div class="product-img damascus"></div>
-
-<div class="product-body">
-
-<span class="discount">25% تخفیف</span>
-
-<h3>🌈 Damascus Gun</h3>
-
-<div class="old-price">10,000,000 تومان</div>
-
-<div class="new-price">7,500,000 تومان</div>
-
-<button class="cart"
-onclick="buyProduct('Damascus Gun',7500000)">
-🛒 خرید محصول
-</button>
-
-</div>
-</div>
-
-</div>
-
-</div>
-
-<div class="cart-box">
-🛒 سبد خرید:
-<strong id="cartCount">0</strong>
-محصول
-</div>
-
-<footer>
-  <b>ALCATRAZCODM</b>
-  <br><br>
-  فروشگاه CP و محصولات Call of Duty Mobile
-  <br><br>
-  © 2026 AlcatrazCODM
-</footer>
-
-<script>
-
-/* =========================
-   CP PRODUCTS
-========================= */
-
-const cpProducts = [
-  [80,210000],
-  [160,415000],
-  [240,620000],
-  [320,825000],
-  [400,1030000],
-  [420,1240000],
-  [480,1240000],
-  [500,1320000],
-  [560,1500000],
-  [580,1650000],
-  [660,1860000],
-  [720,1860000],
-  [740,2060000],
-  [880,2270000],
-  [960,2480000],
-  [1040,2700000],
-  [1120,4550000],
-  [1300,3510000],
-  [1760,2800000]
-];
-
-const cpGrid = document.getElementById("cpGrid");
-
-function formatMoney(number){
-  return number.toLocaleString("fa-IR");
-}
-
-function createCoins(cp){
-
-  let amount = 1;
-
-  if(cp >= 160) amount = 2;
-  if(cp >= 320) amount = 3;
-  if(cp >= 560) amount = 4;
-  if(cp >= 880) amount = 5;
-  if(cp >= 1300) amount = 7;
-  if(cp >= 1760) amount = 9;
-
-  let html = '<div class="cp-coins">';
-
-  for(let i=0;i<amount;i++){
-    html += `<div class="coin">CP</div>`;
-  }
-
-  html += '</div>';
-
-  return html;
-}
-
-cpProducts.forEach(item => {
-
-  const cp = item[0];
-  const price = item[1];
-
-  const card = document.createElement("div");
-
-  card.className = "cp-card";
-
-  card.innerHTML = `
-
-    <div class="cp-image">
-      ${createCoins(cp)}
     </div>
 
-    <div class="cp-name">
-      ${cp} CP
-    </div>
-
-    <div class="price">
-      ${formatMoney(price)} تومان
-    </div>
-
-    <button class="buy"
-      onclick="buyProduct('${cp} CP',${price})">
-      🛒 خرید
+    <button onclick="openWallet()">
+      + شارژ کیف پول
     </button>
 
-  `;
+  </section>
 
-  cpGrid.appendChild(card);
 
-});
+  <!-- CP STORE -->
 
-/* =========================
-   WALLET
-========================= */
+  <section class="section" id="cp">
 
-let balance = Number(localStorage.getItem("alcatrazBalance")) || 0;
+    <div class="section-title">
 
-function updateBalance(){
+      <h2>خرید CP</h2>
 
-  document.getElementById("balance").innerText =
-    formatMoney(balance);
+      <p>
+        بسته موردنظر خود را انتخاب کنید
+      </p>
 
-  document.getElementById("miniBalance").innerText =
-    formatMoney(balance);
+    </div>
 
-  localStorage.setItem(
-    "alcatrazBalance",
-    balance
-  );
-}
 
-function addMoney(amount){
+    <div class="cp-grid">
 
-  balance += amount;
 
-  updateBalance();
+      <div class="cp-card">
 
-  alert(
-    `${formatMoney(amount)} تومان به کیف پول اضافه شد.`
-  );
-}
+        <div class="cp-image">
+          CP
+        </div>
 
-function showWallet(){
+        <h3>80 CP</h3>
 
-  alert(
-    "برای افزایش واقعی موجودی، در مرحله بعد درگاه پرداخت به کیف پول متصل می‌شود."
-  );
+        <div class="cp-price">
+          ۹۰,۰۰۰ تومان
+        </div>
 
-}
+        <button class="buy-btn"
+          onclick="buyCP(90000, '80 CP')">
+          خرید
+        </button>
 
-/* =========================
-   COUPON
-========================= */
+      </div>
 
-function applyCoupon(){
 
-  const code =
-    document.getElementById("couponInput").value.trim();
+      <div class="cp-card">
 
-  const message =
-    document.getElementById("couponMessage");
+        <div class="cp-image">
+          CP
+        </div>
 
-  if(code === "ALCATRAZ50"){
+        <h3>420 CP</h3>
 
-    message.style.color = "#00ff66";
+        <div class="cp-price">
+          ۳۹۰,۰۰۰ تومان
+        </div>
 
-    message.innerText =
-      "کد تخفیف با موفقیت فعال شد.";
+        <button class="buy-btn"
+          onclick="buyCP(390000, '420 CP')">
+          خرید
+        </button>
 
-  }else{
+      </div>
 
-    message.style.color = "#ff4444";
 
-    message.innerText =
-      "کد تخفیف معتبر نیست.";
+      <div class="cp-card">
 
-  }
+        <div class="cp-image">
+          CP
+        </div>
 
-}
+        <h3>880 CP</h3>
 
-/* =========================
-   PURCHASE
-========================= */
+        <div class="cp-price">
+          ۷۹۰,۰۰۰ تومان
+        </div>
 
-let cartCount = 0;
+        <button class="buy-btn"
+          onclick="buyCP(790000, '880 CP')">
+          خرید
+        </button>
 
-function buyProduct(name, price){
+      </div>
 
-  if(balance < price){
 
-    alert(
-      "موجودی کیف پول برای خرید این محصول کافی نیست."
-    );
+      <div class="cp-card">
 
-    return;
-  }
+        <div class="cp-image">
+          CP
+        </div>
 
-  const answer =
-    confirm(
-      `${name}\n\nقیمت: ${formatMoney(price)} تومان\n\nآیا خرید انجام شود؟`
-    );
+        <h3>2400 CP</h3>
 
-  if(!answer) return;
+        <div class="cp-price">
+          ۱,۹۹۰,۰۰۰ تومان
+        </div>
 
-  balance -= price;
+        <button class="buy-btn"
+          onclick="buyCP(1990000, '2400 CP')">
+          خرید
+        </button>
 
-  cartCount++;
+      </div>
 
-  document.getElementById("cartCount").innerText =
-    cartCount;
 
-  updateBalance();
+      <div class="cp-card">
 
-  alert(
-    `خرید ${name} با موفقیت ثبت شد.`
-  );
+        <div class="cp-image">
+          CP
+        </div>
 
-}
+        <h3>5000 CP</h3>
 
-updateBalance();
+        <div class="cp-price">
+          ۳,۹۹۰,۰۰۰ تومان
+        </div>
 
-</script>
+        <button class="buy-btn"
+          onclick="buyCP(3990000, '5000 CP')">
+          خرید
+        </button>
+
+      </div>
+
+
+      <div class="cp-card">
+
+        <div class="cp-image">
+          CP
+        </div>
+
+        <h3>10800 CP</h3>
+
+        <div class="cp-price">
+          ۷,۹۹۰,۰۰۰ تومان
+        </div>
+
+        <button class="buy-btn"
+          onclick="buyCP(7990000, '10800 CP')">
+          خرید
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURES -->
+
+  <section class="section">
+
+    <div class="section-title">
+
+      <h2>امکانات فروشگاه</h2>
+
+    </div>
+
+    <div class="features">
+
+      <div class="feature">
+
+        <div class="feature-icon">🪙</div>
+
+        <h3>خرید CP</h3>
+
+        <p>
+          بسته‌های مختلف CP برای انتخاب و خرید.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">💰</div>
+
+        <h3>کیف پول</h3>
+
+        <p>
+          موجودی کیف پول خود را مدیریت کنید.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">⚡</div>
+
+        <h3>سریع</h3>
+
+        <p>
+          طراحی سریع و مناسب موبایل.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">🔒</div>
+
+        <h3>امن</h3>
+
+        <p>
+          اطلاعات خرید و حساب کاربری را با دقت مدیریت کنید.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GUIDE -->
+
+  <section class="section" id="guide">
+
+    <div class="section-title">
+
+      <h2>چطور خرید کنیم؟</h2>
+
+    </div>
+
+
+    <div class="steps">
+
+      <div class="step">
+
+        <div class="number">01</div>
+
+        <h3>شارژ کیف پول</h3>
+
+        <p>
+          ابتدا کیف پول خود را شارژ کنید.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">02</div>
+
+        <h3>انتخاب CP</h3>
+
+        <p>
+          بسته CP موردنظر خود را انتخاب کنید.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">03</div>
+
+        <h3>ثبت سفارش</h3>
+
+        <p>
+          سفارش خود را ثبت کنید.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">04</div>
+
+        <h3>تحویل</h3>
+
+        <p>
+          اطلاعات سفارش برای شما نمایش داده می‌شود.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WALLET MODAL -->
+
+  <div class="modal" id="walletModal">
+
+    <div class="modal-box">
+
+      <span class="close"
+        onclick="closeWallet()">×</span>
+
+      <h2>شارژ کیف پول</h2>
+
+      <input
+        type="number"
+        id="chargeAmount"
+        placeholder="مبلغ به تومان">
+
+      <button onclick="chargeWallet()">
+        شارژ کیف پول
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026
+      <strong>ALCATRAZ CODM</strong>
+      — COD Mobile Store
+    </p>
+
+    <p style="margin-top:10px;">
+      این سایت نمونه طراحی فروشگاهی است.
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    let balance =
+      Number(localStorage.getItem("codmBalance")) || 0;
+
+
+    function updateBalance() {
+
+      document.getElementById("balance")
+        .textContent =
+        balance.toLocaleString("fa-IR");
+
+    }
+
+
+    function openWallet() {
+
+      document.getElementById("walletModal")
+        .style.display = "flex";
+
+    }
+
+
+    function closeWallet() {
+
+      document.getElementById("walletModal")
+        .style.display = "none";
+
+    }
+
+
+    function chargeWallet() {
+
+      const input =
+        document.getElementById("chargeAmount");
+
+      const amount =
+        Number(input.value);
+
+
+      if (!amount || amount <= 0) {
+
+        alert("لطفاً مبلغ معتبر وارد کنید.");
+
+        return;
+
+      }
+
+
+      balance += amount;
+
+
+      localStorage.setItem(
+        "codmBalance",
+        balance
+      );
+
+
+      updateBalance();
+
+      input.value = "";
+
+      closeWallet();
+
+
+      alert(
+        "موجودی کیف پول به صورت آزمایشی شارژ شد."
+      );
+
+    }
+
+
+    function buyCP(price, packageName) {
+
+      if (balance < price) {
+
+        alert(
+          "موجودی کیف پول برای خرید " +
+          packageName +
+          " کافی نیست."
+        );
+
+        openWallet();
+
+        return;
+
+      }
+
+
+      balance -= price;
+
+
+      localStorage.setItem(
+        "codmBalance",
+        balance
+      );
+
+
+      updateBalance();
+
+
+      alert(
+        "سفارش " +
+        packageName +
+        " با موفقیت ثبت شد."
+      );
+
+    }
+
+
+    window.onclick = function(event) {
+
+      const modal =
+        document.getElementById("walletModal");
+
+      if (event.target === modal) {
+
+        closeWallet();
+
+      }
+
+    };
+
+
+    updateBalance();
+
+  </script>
 
 </body>
   </html>
