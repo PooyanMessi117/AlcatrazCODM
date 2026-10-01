@@ -3,175 +3,307 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alcatraz CODM | خانه</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AlcatrazCODM | فروشگاه گیمینگ</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap');
+:root{--bg:#080b15;--panel:#11182a;--panel2:#17223a;--blue:#00d5ff;--purple:#9b5cff;--text:#f5f7ff;--muted:#a8b2c9;--line:#293653}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#080d18;color:#fff}
-header{background:#101a2d;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;border-bottom:2px solid #00c8ff}
-.logo{font-size:23px;font-weight:bold;color:#00c8ff}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-size:14px}
-nav a:hover{color:#00c8ff}
-.hero{min-height:390px;padding:70px 7%;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(90deg,rgba(5,10,20,.96),rgba(5,10,20,.55)),linear-gradient(135deg,#12345c,#111827,#401b2e)}
-.hero h1{font-size:clamp(30px,5vw,54px);margin:0 0 15px}
-.hero h1 span{color:#00c8ff}
-.hero p{color:#cbd5e1;max-width:600px;line-height:2}
-.btn{display:inline-block;background:#00b9ed;color:#06111d;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
-.btn:hover{background:#62dcff}
-section{padding:45px 6%}
-.section-title{font-size:25px;margin:0 0 25px;border-right:4px solid #00c8ff;padding-right:12px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#121d31;border:1px solid #253653;border-radius:14px;padding:22px;transition:.2s}
-.card:hover{transform:translateY(-4px);border-color:#00c8ff}
-.card h3{color:#00c8ff;margin-top:0}
-.card p{color:#b8c5d8;line-height:1.8}
-.price{font-size:20px;font-weight:bold;color:#ffe16a}
-table{width:100%;border-collapse:collapse;background:#121d31;border-radius:12px;overflow:hidden}
-th,td{padding:15px;text-align:center;border-bottom:1px solid #26344c}
-th{background:#173052;color:#00c8ff}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,sans-serif}
+button,input,select{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+.bg-glow{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 15% 15%,#123b654d,transparent 40%),radial-gradient(ellipse at 85% 45%,#54238c35,transparent 40%),linear-gradient(140deg,#080b15,#0c1221 55%,#090c17)}
+header{position:sticky;top:0;z-index:10;background:#090e1beF;backdrop-filter:blur(16px);border-bottom:1px solid #26324d}
+.nav{max-width:1200px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{font-size:21px;font-weight:900;letter-spacing:.4px;color:white}
+.brand span{color:var(--blue);text-shadow:0 0 18px #00d5ff80}
+nav{display:flex;gap:18px;flex-wrap:wrap;color:#cbd5e8;font-size:13px}
+nav a:hover{color:var(--blue)}
+.nav-actions{display:flex;gap:8px;align-items:center}
+.btn{border:0;border-radius:10px;padding:11px 17px;font-weight:700;background:linear-gradient(110deg,var(--blue),#5d9cff);color:#06111c;transition:.2s}
+.btn:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.btn.secondary{background:#1a2741;color:white;border:1px solid #344361}
+.btn.purple{background:linear-gradient(110deg,#a45cff,#6b5cff);color:white}
+.small{padding:8px 12px;font-size:12px}
+.container{max-width:1200px;margin:auto;padding:0 20px}
+.hero{min-height:470px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:25px;padding-top:45px;padding-bottom:45px}
+.kicker{color:var(--blue);font-size:13px;font-weight:700;letter-spacing:1px}
+.hero h1{font-size:clamp(34px,5vw,65px);line-height:1.35;margin:14px 0}
+.hero h1 span{color:var(--blue);text-shadow:0 0 30px #00d5ff4d}
+.hero p{color:var(--muted);line-height:2;max-width:590px}
+.hero-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.hero-art{min-height:330px;border:1px solid #34466d;border-radius:28px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,#24517d 0,#17213d 36%,#0b1020 75%);box-shadow:0 0 70px #1679bb20}
+.hero-art:before,.hero-art:after{content:"";position:absolute;width:250px;height:250px;border:1px solid #00d5ff38;border-radius:50%;box-shadow:0 0 35px #00d5ff20}
+.hero-art:after{width:330px;height:330px}
+.hero-emblem{font-size:100px;filter:drop-shadow(0 0 28px #00cfff);z-index:1}
+.hero-label{position:absolute;bottom:22px;right:22px;left:22px;text-align:center;font-weight:900;font-size:20px;letter-spacing:2px;color:#dffaff}
+section{padding:38px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.section-head h2{margin:0;font-size:25px}
+.section-head p{margin:6px 0 0;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.product{background:linear-gradient(145deg,#151f35,#0f1628);border:1px solid var(--line);border-radius:17px;overflow:hidden;transition:.25s}
+.product:hover{transform:translateY(-4px);border-color:#00cfff80;box-shadow:0 12px 35px #0005}
+.product-art{height:155px;display:grid;place-items:center;font-size:65px;background:radial-gradient(circle at 50% 45%,#214b72,#121a30 65%,#0d1323)}
+.product-body{padding:17px}
+.product h3{margin:0 0 8px;font-size:17px}
+.product p{margin:0 0 14px;color:var(--muted);font-size:12px;line-height:1.8}
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.price{font-size:16px;font-weight:900;color:#ffe27a}
+.tag{font-size:10px;padding:5px 9px;border-radius:30px;background:#17344a;color:#7ee5ff}
+.category-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.filter{background:#131d31;color:#cbd5e8;border:1px solid #2b3b5b;padding:9px 15px;border-radius:9px}
+.filter.active{background:#123e58;color:#71e5ff;border-color:#00cfff}
+.banner{padding:25px;border-radius:17px;border:1px solid #34466d;background:linear-gradient(110deg,#102b47,#191a3d);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.banner h3{margin:0 0 6px}
+.banner p{margin:0;color:var(--muted);font-size:13px}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:15px}
+table{width:100%;border-collapse:collapse;min-width:550px;background:#11192b}
+th,td{padding:15px;text-align:center;border-bottom:1px solid #293550;font-size:13px}
+th{color:var(--blue);background:#192640}
 tr:last-child td{border:0}
-.rank{color:#ffd45a;font-weight:bold}
-.profile{max-width:600px;margin:auto;background:#121d31;padding:25px;border-radius:14px;border:1px solid #253653}
-label{display:block;margin-top:12px;color:#cbd5e1}
-input{width:100%;padding:13px;margin:8px 0 15px;border:1px solid #334766;border-radius:8px;background:#0a1220;color:white}
-.notice{color:#9fb1c9;font-size:12px;line-height:1.8}
-footer{text-align:center;padding:25px;color:#9eacc1;background:#0c1423;border-top:1px solid #26344c}
-@media(max-width:600px){header{justify-content:center}nav{justify-content:center}.hero{padding:55px 6%}section{padding:35px 5%}}
+.gold{color:#ffdb65;font-weight:900}
+.panel{background:#11192b;border:1px solid var(--line);border-radius:17px;padding:22px}
+.account-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:block;margin:12px 0 6px;color:#cbd5e8;font-size:13px}
+input,select{width:100%;padding:12px 13px;border:1px solid #344361;background:#0a1120;color:white;border-radius:9px;outline:none}
+input:focus,select:focus{border-color:var(--blue)}
+.note{font-size:11px;color:#93a2bc;line-height:1.9}
+.hidden{display:none!important}
+.cart-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #293550;font-size:13px}
+.cart-item:last-child{border:0}
+footer{margin-top:45px;padding:30px 20px;text-align:center;background:#090e1a;border-top:1px solid #26324d;color:#94a3bd;font-size:12px;line-height:2}
+.toast{position:fixed;bottom:20px;left:20px;z-index:30;background:#18334a;border:1px solid #00d5ff;color:white;border-radius:12px;padding:13px 17px;box-shadow:0 10px 35px #0008;max-width:calc(100% - 40px)}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.hero-art{min-height:250px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.grid,.account-layout{grid-template-columns:1fr}.nav{justify-content:center}.brand{width:100%;text-align:center}nav{justify-content:center;gap:12px}.nav-actions{width:100%;justify-content:center}.hero{min-height:auto;padding-top:55px}.hero-art{min-height:220px}.hero-emblem{font-size:75px}.section-head h2{font-size:21px}}
 </style>
 </head>
 <body>
+<div class="bg-glow"></div>
 
 <header>
- <div class="logo">⚡ ALCATRAZ CODM</div>
- <nav>
-  <a href="#home">خانه</a>
-  <a href="#tournament">تورنومنت</a>
-  <a href="#leaderboard">رتبه‌بندی</a>
-  <a href="#shop">فروشگاه</a>
-  <a href="#account">حساب کاربری</a>
- </nav>
+ <div class="nav">
+  <a class="brand" href="#home">⚡ ALCATRAZ<span>CODM</span></a>
+  <nav>
+   <a href="#home">خانه</a>
+   <a href="#cp">خرید سی‌پی</a>
+   <a href="#accounts">اکانت‌ها</a>
+   <a href="#tournament">تورنومنت</a>
+   <a href="#leaderboard">رتبه‌بندی</a>
+  </nav>
+  <div class="nav-actions">
+   <button class="btn secondary small" onclick="showCart()">🛒 سبد <span id="cartCount">0</span></button>
+   <button class="btn small" onclick="goAccount()">ورود / ثبت‌نام</button>
+  </div>
+ </div>
 </header>
 
-<main>
-<section class="hero" id="home">
- <h1>به <span>ALCATRAZ</span> خوش آمدی</h1>
- <p>وارد میدان رقابت شو، در تورنومنت‌ها شرکت کن، رتبه بگیر و مهارتت را در Call of Duty Mobile نشان بده!</p>
- <div><a class="btn" href="#tournament">مشاهده تورنومنت‌ها</a></div>
-</section>
+<main class="container">
+ <section class="hero" id="home">
+  <div>
+   <div class="kicker">YOUR NEXT LEVEL STARTS HERE</div>
+   <h1>وارد میدان شو،<br><span>افسانه بساز!</span></h1>
+   <p>به دنیای AlcatrazCODM خوش آمدی؛ فروشگاه گیمینگ، محصولات کالاف دیوتی موبایل و رقابت‌های ویژه در یک محیط مدرن.</p>
+   <div class="hero-buttons">
+    <a class="btn" href="#cp">🪙 خرید سی‌پی</a>
+    <a class="btn secondary" href="#accounts">🎮 مشاهده اکانت‌ها</a>
+   </div>
+  </div>
+  <div class="hero-art">
+   <div class="hero-emblem">☠️</div>
+   <div class="hero-label">ALCATRAZ • BATTLE ZONE</div>
+  </div>
+ </section>
 
-<section id="tournament">
- <h2 class="section-title">🏆 تورنومنت‌ها</h2>
- <div class="cards">
-  <div class="card">
-   <h3>🔥 تورنومنت Alcatraz</h3>
-   <p>رقابت در نقشه Alcatraz</p>
-   <p>ظرفیت: 100 بازیکن</p>
-   <p>جایزه: 1000 امتیاز</p>
-   <a class="btn" href="#account">ورود به رقابت</a>
+ <section id="cp">
+  <div class="section-head">
+   <div><h2>🪙 فروش سی‌پی کالاف</h2><p>بسته موردنظرت را انتخاب کن.</p></div>
   </div>
-  <div class="card">
-   <h3>⚔️ رقابت حرفه‌ای BR</h3>
-   <p>مسابقه ویژه بازیکنان بتل رویال</p>
-   <p>ظرفیت: 50 بازیکن</p>
-   <p>جایزه: 500 امتیاز</p>
-   <a class="btn" href="#account">ورود به رقابت</a>
-  </div>
-  <div class="card">
-   <h3>💎 مسابقه هفتگی</h3>
-   <p>برای تمام بازیکنان سایت</p>
-   <p>ظرفیت: 100 بازیکن</p>
-   <p>جایزه: 250 امتیاز</p>
-   <a class="btn" href="#account">ورود به رقابت</a>
-  </div>
- </div>
-</section>
+  <div class="grid" id="cpProducts"></div>
+ </section>
 
-<section id="leaderboard">
- <h2 class="section-title">👑 جدول رتبه‌بندی</h2>
- <div style="overflow-x:auto">
-  <table>
-   <thead>
-    <tr><th>رتبه</th><th>نام بازیکن</th><th>رنک</th><th>امتیاز</th></tr>
-   </thead>
-   <tbody>
-    <tr><td>🥇 1</td><td>Player One</td><td class="rank">Legendary</td><td>9500</td></tr>
-    <tr><td>🥈 2</td><td>Player Two</td><td class="rank">Legendary</td><td>8700</td></tr>
-    <tr><td>🥉 3</td><td>Player Three</td><td class="rank">Master</td><td>7600</td></tr>
-    <tr><td>4</td><td>Player Four</td><td>Grandmaster</td><td>6200</td></tr>
-    <tr><td>5</td><td>Player Five</td><td>Master</td><td>5100</td></tr>
-   </tbody>
-  </table>
- </div>
- <p class="notice">این جدول فعلاً نمونه است و امتیازها به‌صورت خودکار از بازی دریافت نمی‌شوند.</p>
-</section>
+ <section id="accounts">
+  <div class="section-head">
+   <div><h2>🎮 فروش اکانت کالاف</h2><p>نمونه آگهی‌ها؛ برای محصولات واقعی باید اطلاعات و قیمت‌ها را ثبت کنی.</p></div>
+  </div>
+  <div class="category-row">
+   <button class="filter active" onclick="filterAccounts('همه',this)">همه</button>
+   <button class="filter" onclick="filterAccounts('Legendary',this)">Legendary</button>
+   <button class="filter" onclick="filterAccounts('Mythic',this)">Mythic</button>
+   <button class="filter" onclick="filterAccounts('معمولی',this)">معمولی</button>
+  </div>
+  <div class="grid" id="accountProducts"></div>
+ </section>
 
-<section id="shop">
- <h2 class="section-title">🛒 فروشگاه</h2>
- <div class="cards">
-  <div class="card">
-   <h3>💎 Diamond</h3>
-   <p>محصولات دسته دایموند</p>
-   <div class="price">100 امتیاز</div>
-   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
+ <section id="tournament">
+  <div class="section-head"><div><h2>🏆 تورنومنت‌ها</h2><p>برای شرکت در رقابت‌های آینده آماده شو.</p></div></div>
+  <div class="grid">
+   <div class="product"><div class="product-art">🏝️</div><div class="product-body"><h3>Alcatraz Battle</h3><p>رقابت بتل رویال در نقشه Alcatraz</p><span class="tag">به‌زودی</span></div></div>
+   <div class="product"><div class="product-art">⚔️</div><div class="product-body"><h3>BR Championship</h3><p>رقابت ویژه بازیکنان بتل رویال</p><span class="tag">به‌زودی</span></div></div>
+   <div class="product"><div class="product-art">👑</div><div class="product-body"><h3>Legendary Cup</h3><p>مسابقه مخصوص بازیکنان حرفه‌ای</p><span class="tag">به‌زودی</span></div></div>
   </div>
-  <div class="card">
-   <h3>🥇 Gold</h3>
-   <p>محصولات دسته گلد</p>
-   <div class="price">200 امتیاز</div>
-   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
-  </div>
-  <div class="card">
-   <h3>⚙️ Damascus</h3>
-   <p>محصولات دسته دمَسکاس</p>
-   <div class="price">350 امتیاز</div>
-   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
-  </div>
-  <div class="card">
-   <h3>👑 Legendary</h3>
-   <p>محصولات ویژه لجندری</p>
-   <div class="price">500 امتیاز</div>
-   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
-  </div>
-  <div class="card">
-   <h3>🪙 Silver</h3>
-   <p>محصولات دسته سیلور</p>
-   <div class="price">50 امتیاز</div>
-   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
-  </div>
-  <div class="card">
-   <h3>🪂 Battle Royale</h3>
-   <p>محصولات ویژه بتل رویال</p>
-   <div class="price">150 امتیاز</div>
-   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
-  </div>
- </div>
-</section>
+ </section>
 
-<section id="account">
- <h2 class="section-title">👤 پنل کاربری</h2>
- <div class="profile">
-  <h3 style="color:#00c8ff">ورود به حساب کاربری</h3>
-  <form onsubmit="event.preventDefault();alert('این فرم هنوز به سیستم ثبت‌نام و ورود متصل نیست.');">
-   <label for="username">نام کاربری</label>
-   <input id="username" type="text" placeholder="نام کاربری خود را وارد کن" required>
-   <label for="email">ایمیل</label>
-   <input id="email" type="email" placeholder="ایمیل خود را وارد کن" required>
-   <label for="password">رمز عبور</label>
-   <input id="password" type="password" placeholder="رمز عبور" required>
-   <button class="btn" type="submit">ورود</button>
-  </form>
-  <p class="notice">این فرم فقط نمایشی است. برای ورود واقعی، ثبت‌نام، بازیابی رمز و ذخیره اطلاعات باید سیستم بک‌اند و پایگاه داده راه‌اندازی شود.</p>
- </div>
-</section>
+ <section id="leaderboard">
+  <div class="section-head"><div><h2>👑 جدول رتبه‌بندی</h2><p>نمونه جدول بازیکنان</p></div></div>
+  <div class="table-wrap">
+   <table>
+    <thead><tr><th>رتبه</th><th>بازیکن</th><th>رنک</th><th>امتیاز</th></tr></thead>
+    <tbody>
+     <tr><td class="gold">🥇 1</td><td>AlcatrazKing</td><td>Legendary</td><td>9500</td></tr>
+     <tr><td class="gold">🥈 2</td><td>GhostBR</td><td>Legendary</td><td>8700</td></tr>
+     <tr><td class="gold">🥉 3</td><td>Shadow</td><td>Master</td><td>7600</td></tr>
+     <tr><td>4</td><td>SniperX</td><td>Grandmaster</td><td>6200</td></tr>
+     <tr><td>5</td><td>Warrior</td><td>Master</td><td>5100</td></tr>
+    </tbody>
+   </table>
+  </div>
+ </section>
+
+ <section id="account">
+  <div class="section-head"><div><h2>👤 حساب کاربری</h2><p>ثبت‌نام و ورود آزمایشی در همین مرورگر</p></div></div>
+  <div class="account-layout">
+   <div class="panel" id="authPanel">
+    <div class="category-row">
+     <button class="filter active" id="loginTab" onclick="setAuthMode('login')">ورود</button>
+     <button class="filter" id="registerTab" onclick="setAuthMode('register')">ثبت‌نام</button>
+    </div>
+    <form id="authForm">
+     <label class="field" for="authName">نام کاربری</label>
+     <input id="authName" autocomplete="username" placeholder="نام کاربری" required>
+     <div id="emailWrap" class="hidden">
+      <label class="field" for="authEmail">ایمیل</label>
+      <input id="authEmail" type="email" autocomplete="email" placeholder="example@email.com">
+     </div>
+     <label class="field" for="authPassword">رمز عبور</label>
+     <input id="authPassword" type="password" autocomplete="current-password" placeholder="رمز عبور" required>
+     <button class="btn" id="authSubmit" type="submit">ورود</button>
+    </form>
+    <p class="note">این بخش فقط نمونهٔ نمایشی است و ورود امن یا ثبت‌نام واقعی انجام نمی‌دهد. اطلاعات واقعی یا رمز اصلی خود را وارد نکن.</p>
+   </div>
+   <div class="panel">
+    <h3>🛒 سبد خرید</h3>
+    <div id="cartItems"><p class="note">سبد خرید خالی است.</p></div>
+    <div class="cart-item"><strong>مجموع</strong><strong id="cartTotal">۰ تومان</strong></div>
+    <button class="btn purple" style="width:100%;margin-top:14px" onclick="checkout()">ثبت سفارش آزمایشی</button>
+    <p class="note">پرداخت آنلاین هنوز متصل نشده است. سفارش این نسخه فقط در مرورگر شبیه‌سازی می‌شود.</p>
+   </div>
+  </div>
+ </section>
 </main>
 
 <footer>
- <p>© 2026 AlcatrazCODM</p>
- <p>ساخته‌شده برای جامعه بازیکنان Call of Duty Mobile</p>
+ <strong>⚡ ALCATRAZ CODM</strong><br>
+ فروشگاه و جامعه بازیکنان Call of Duty Mobile<br>
+ © 2026 AlcatrazCODM — تمام حقوق محفوظ است.
 </footer>
 
+<div id="toast" class="toast hidden" role="status"></div>
+
+<script>
+const cpItems=[
+ {id:'cp80',name:'80 CP',price:90000,desc:'بسته آزمایشی سی‌پی',icon:'🪙'},
+ {id:'cp420',name:'420 CP',price:350000,desc:'بسته متوسط سی‌پی',icon:'💎'},
+ {id:'cp880',name:'880 CP',price:690000,desc:'بسته بزرگ سی‌پی',icon:'💠'},
+ {id:'cp2400',name:'2400 CP',price:1750000,desc:'بسته ویژه سی‌پی',icon:'👑'},
+ {id:'cp5000',name:'5000 CP',price:3500000,desc:'بسته حرفه‌ای سی‌پی',icon:'🔥'},
+ {id:'cp10800',name:'10800 CP',price:7200000,desc:'بسته بزرگ ویژه',icon:'⚡'}
+];
+const accountItems=[
+ {id:'acc1',name:'اکانت Legendary',price:1200000,desc:'نمونه آگهی؛ جزئیات اکانت باید تکمیل شود.',type:'Legendary',icon:'👑'},
+ {id:'acc2',name:'اکانت Mythic',price:2500000,desc:'نمونه آگهی؛ تعداد آیتم‌ها مشخص نشده است.',type:'Mythic',icon:'🔥'},
+ {id:'acc3',name:'اکانت بتل رویال',price:600000,desc:'نمونه آگهی برای اکانت معمولی.',type:'معمولی',icon:'🎮'}
+];
+let cart=[];
+let authMode='login';
+let demoUser=null;
+
+const money=n=>n.toLocaleString('fa-IR')+' تومان';
+function showToast(message){
+ const t=document.getElementById('toast');
+ t.textContent=message;t.classList.remove('hidden');
+ clearTimeout(showToast.timer);
+ showToast.timer=setTimeout(()=>t.classList.add('hidden'),3000);
+}
+function productCard(p){
+ return `<article class="product">
+ <div class="product-art">${p.icon}</div>
+ <div class="product-body">
+ <h3>${p.name}</h3><p>${p.desc}</p>
+ <div class="price-row"><span class="price">${money(p.price)}</span>
+ <button class="btn small" onclick="addToCart('${p.id}')">افزودن</button></div>
+ </div></article>`;
+}
+function renderProducts(){
+ document.getElementById('cpProducts').innerHTML=cpItems.map(productCard).join('');
+ document.getElementById('accountProducts').innerHTML=accountItems.map(productCard).join('');
+}
+function filterAccounts(type,button){
+ document.querySelectorAll('.category-row .filter').forEach(b=>b.classList.remove('active'));
+ button.classList.add('active');
+ const list=type==='همه'?accountItems:accountItems.filter(p=>p.type===type);
+ document.getElementById('accountProducts').innerHTML=list.map(productCard).join('');
+}
+function findProduct(id){return [...cpItems,...accountItems].find(p=>p.id===id)}
+function addToCart(id){
+ const p=findProduct(id);if(!p)return;
+ const existing=cart.find(x=>x.id===id);
+ if(existing)existing.qty++;else cart.push({...p,qty:1});
+ renderCart();showToast('محصول به سبد خرید اضافه شد.');
+}
+function removeFromCart(id){
+ cart=cart.filter(x=>x.id!==id);renderCart();
+}
+function renderCart(){
+ document.getElementById('cartCount').textContent=cart.reduce((n,x)=>n+x.qty,0).toLocaleString('fa-IR');
+ document.getElementById('cartItems').innerHTML=cart.length?cart.map(x=>`
+ <div class="cart-item">
+ <span>${x.name} × ${x.qty.toLocaleString('fa-IR')}</span>
+ <span>${money(x.price*x.qty)} <button class="filter" onclick="removeFromCart('${x.id}')">حذف</button></span>
+ </div>`).join(''):'<p class="note">سبد خرید خالی است.</p>';
+ document.getElementById('cartTotal').textContent=money(cart.reduce((n,x)=>n+x.price*x.qty,0));
+}
+function showCart(){document.getElementById('account').scrollIntoView({behavior:'smooth'});}
+function goAccount(){document.getElementById('account').scrollIntoView({behavior:'smooth'});}
+function checkout(){
+ if(!cart.length){showToast('سبد خرید خالی است.');return;}
+ showToast('این سفارش آزمایشی است؛ پرداخت واقعی فعال نیست.');
+}
+function setAuthMode(mode){
+ authMode=mode;
+ document.getElementById('emailWrap').classList.toggle('hidden',mode==='login');
+ document.getElementById('authEmail').required=mode==='register';
+ document.getElementById('authSubmit').textContent=mode==='login'?'ورود':'ثبت‌نام';
+ document.getElementById('loginTab').classList.toggle('active',mode==='login');
+ document.getElementById('registerTab').classList.toggle('active',mode==='register');
+}
+document.getElementById('authForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const name=document.getElementById('authName').value.trim();
+ const email=document.getElementById('authEmail').value.trim();
+ const password=document.getElementById('authPassword').value;
+ if(password.length<6){showToast('رمز آزمایشی باید حداقل ۶ کاراکتر باشد.');return;}
+ if(authMode==='register'){
+  demoUser={name,email};
+  sessionStorage.setItem('alcatrazDemoUser',JSON.stringify(demoUser));
+  showToast('ثبت‌نام آزمایشی انجام شد.');
+ }else{
+  const saved=sessionStorage.getItem('alcatrazDemoUser');
+  if(!saved){showToast('ابتدا ثبت‌نام آزمایشی انجام بده.');return;}
+  const user=JSON.parse(saved);
+  if(user.name!==name){showToast('نام کاربری با حساب آزمایشی مطابقت ندارد.');return;}
+  demoUser=user;
+  showToast('ورود آزمایشی موفق بود.');
+ }
+ document.getElementById('authName').value='';
+ document.getElementById('authEmail').value='';
+ document.getElementById('authPassword').value='';
+});
+renderProducts();
+renderCart();
+</script>
 </body>
-      </html>
-      
+ </html>
+ 
