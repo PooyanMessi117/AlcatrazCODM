@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AlcatrazCODM | کالاف دیوتی موبایل</title>
+<title>AlcatrazCODM | فروشگاه کالاف دیوتی موبایل</title>
 
 <style>
 *{
@@ -19,28 +19,26 @@ html{
 
 body{
   font-family:Tahoma,Arial,sans-serif;
-  background:#070b14;
-  color:#fff;
+  background:#060a12;
+  color:white;
   line-height:1.8;
 }
 
 header{
-  background:linear-gradient(135deg,#10182b,#08101e);
-  padding:25px 15px;
+  padding:28px 15px;
   text-align:center;
+  background:linear-gradient(135deg,#101b31,#050911);
   border-bottom:1px solid #00e5ff;
 }
 
 .logo{
-  font-size:32px;
+  font-size:34px;
   font-weight:bold;
   color:#00e5ff;
-  letter-spacing:2px;
 }
 
 header p{
-  color:#aab4c7;
-  margin-top:5px;
+  color:#aeb9ca;
 }
 
 nav{
@@ -49,19 +47,17 @@ nav{
   z-index:1000;
   display:flex;
   justify-content:center;
-  flex-wrap:wrap;
   gap:8px;
   padding:12px;
-  background:rgba(12,18,32,.96);
-  border-bottom:1px solid #1d304c;
+  background:#0c1424;
+  border-bottom:1px solid #223653;
 }
 
 nav a{
-  color:#dce8f5;
+  color:white;
   text-decoration:none;
   padding:8px 14px;
   border-radius:8px;
-  transition:.2s;
 }
 
 nav a:hover{
@@ -77,22 +73,16 @@ nav a:hover{
   text-align:center;
   padding:50px 20px;
   background:
-    radial-gradient(circle at center,#17365b 0,#0a1222 45%,#070b14 100%);
-}
-
-.hero-content{
-  max-width:750px;
+  radial-gradient(circle,#183d67 0%,#0a1221 45%,#060a12 100%);
 }
 
 .hero h1{
-  font-size:45px;
+  font-size:46px;
   color:#00e5ff;
-  margin-bottom:15px;
 }
 
 .hero h2{
-  font-size:25px;
-  margin-bottom:15px;
+  margin:12px 0;
 }
 
 .hero p{
@@ -102,15 +92,15 @@ nav a:hover{
 
 .btn{
   display:inline-block;
-  padding:12px 24px;
-  border-radius:10px;
-  background:#00d9ff;
-  color:#031018;
-  text-decoration:none;
-  font-weight:bold;
   border:0;
   cursor:pointer;
-  transition:.2s;
+  background:#00d9ff;
+  color:#031018;
+  padding:12px 22px;
+  border-radius:10px;
+  font-weight:bold;
+  text-decoration:none;
+  margin:5px;
 }
 
 .btn:hover{
@@ -130,40 +120,71 @@ nav a:hover{
 }
 
 .section-title h2{
-  font-size:30px;
   color:#00e5ff;
+  font-size:30px;
 }
 
 .section-title p{
-  color:#8997ab;
+  color:#8f9db2;
 }
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
 }
 
 .card{
-  background:linear-gradient(145deg,#111b2e,#0d1525);
-  border:1px solid #243653;
-  border-radius:16px;
-  padding:25px;
+  background:linear-gradient(145deg,#111c30,#0b1322);
+  border:1px solid #243754;
+  border-radius:17px;
+  padding:20px;
+  overflow:hidden;
   transition:.25s;
 }
 
 .card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-6px);
   border-color:#00d9ff;
 }
 
 .card h3{
   color:#00e5ff;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
 .card p{
   color:#aeb9ca;
+}
+
+.product-image{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:13px;
+  margin-bottom:15px;
+  border:1px solid #29415f;
+}
+
+.price{
+  color:#00ffae;
+  font-size:21px;
+  font-weight:bold;
+  margin:15px 0;
+}
+
+.product-tag{
+  display:inline-block;
+  background:#172943;
+  color:#00e5ff;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:13px;
+  margin-top:8px;
+}
+
+.shop-card button{
+  width:100%;
 }
 
 .rank{
@@ -172,73 +193,29 @@ nav a:hover{
 
 .rank-icon{
   font-size:45px;
-  margin-bottom:10px;
-}
-
-.rank-name{
-  font-size:20px;
-  font-weight:bold;
-}
-
-.rank-points{
-  color:#8f9db2;
-  font-size:14px;
-}
-
-.shop-card{
-  position:relative;
-  overflow:hidden;
-}
-
-.product-icon{
-  height:120px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:55px;
-  background:#0a1220;
-  border-radius:12px;
-  margin-bottom:18px;
-}
-
-.price{
-  color:#00ffae;
-  font-size:20px;
-  font-weight:bold;
-  margin:12px 0;
-}
-
-.shop-card button{
-  width:100%;
 }
 
 table{
   width:100%;
   border-collapse:collapse;
   background:#10192a;
-  border-radius:15px;
   overflow:hidden;
+  border-radius:15px;
 }
 
 th,td{
-  padding:15px;
+  padding:14px;
   text-align:center;
-  border-bottom:1px solid #24334c;
+  border-bottom:1px solid #26364e;
 }
 
 th{
-  background:#16233a;
+  background:#17243b;
   color:#00e5ff;
 }
 
 td{
   color:#d5dce7;
-}
-
-.badge{
-  padding:4px 10px;
-  border-radius:20px;
-  background:#243653;
 }
 
 .account{
@@ -250,15 +227,10 @@ td{
   width:100%;
   padding:13px;
   margin:8px 0 15px;
-  background:#0a1220;
+  background:#09111e;
   color:white;
   border:1px solid #293c58;
   border-radius:9px;
-  outline:none;
-}
-
-.input:focus{
-  border-color:#00e5ff;
 }
 
 .cart{
@@ -268,7 +240,7 @@ td{
   z-index:2000;
   background:#00d9ff;
   color:#031018;
-  padding:12px 18px;
+  padding:12px 20px;
   border-radius:30px;
   font-weight:bold;
   cursor:pointer;
@@ -279,15 +251,12 @@ td{
   display:none;
   position:fixed;
   z-index:3000;
-  left:0;
-  top:0;
-  width:100%;
-  height:100%;
-  background:#0009;
+  inset:0;
+  background:#000b;
 }
 
 .cart-box{
-  width:min(500px,92%);
+  width:min(520px,92%);
   max-height:80vh;
   overflow:auto;
   margin:60px auto;
@@ -302,7 +271,7 @@ td{
   justify-content:space-between;
   align-items:center;
   padding:12px 0;
-  border-bottom:1px solid #26364e;
+  border-bottom:1px solid #29394f;
 }
 
 .close{
@@ -312,32 +281,22 @@ td{
   color:#ff6375;
 }
 
-.empty{
-  text-align:center;
-  color:#8d9aad;
-  padding:20px;
-}
-
 footer{
   text-align:center;
   padding:35px 20px;
-  background:#050911;
-  border-top:1px solid #18263c;
+  background:#04070d;
+  border-top:1px solid #1c2b43;
   color:#7d899b;
 }
 
 @media(max-width:600px){
 
   .logo{
-    font-size:25px;
+    font-size:26px;
   }
 
   .hero h1{
     font-size:32px;
-  }
-
-  .hero h2{
-    font-size:21px;
   }
 
   nav{
@@ -355,8 +314,8 @@ footer{
   }
 
   th,td{
-    padding:10px 5px;
     font-size:13px;
+    padding:9px 5px;
   }
 }
 </style>
@@ -366,7 +325,7 @@ footer{
 
 <header>
   <div class="logo">ALCATRAZ CODM</div>
-  <p>دنیای رقابت، رنک و فروشگاه کالاف دیوتی موبایل</p>
+  <p>فروشگاه حرفه‌ای کالاف دیوتی موبایل</p>
 </header>
 
 <nav>
@@ -379,16 +338,14 @@ footer{
 </nav>
 
 <section class="hero" id="home">
-  <div class="hero-content">
+  <div>
     <h1>ALCATRAZ CODM</h1>
-    <h2>به میدان نبرد خوش آمدی 🎮</h2>
+    <h2>🔥 فروشگاه کالاف دیوتی موبایل</h2>
     <p>
-      رقابت کن، امتیاز بگیر، رتبه خودت را بالا ببر
-      و برای رسیدن به Legendary تلاش کن.
+      CP، اسکین، بسته‌های Legendary و محصولات ویژه
     </p>
 
-    <a class="btn" href="#shop">ورود به فروشگاه</a>
-    <a class="btn" href="#tournament">مشاهده تورنمنت‌ها</a>
+    <a class="btn" href="#shop">مشاهده محصولات</a>
   </div>
 </section>
 
@@ -396,30 +353,27 @@ footer{
 
   <div class="section-title">
     <h2>🏆 تورنمنت‌ها</h2>
-    <p>در رقابت‌های AlcatrazCODM شرکت کن</p>
+    <p>رقابت‌های AlcatrazCODM</p>
   </div>
 
   <div class="cards">
 
     <div class="card">
       <h3>🔥 بتل رویال</h3>
-      <p>در مسابقات بتل رویال شرکت کن و امتیاز کسب کن.</p>
-      <br>
-      <span class="badge">در حال ثبت‌نام</span>
+      <p>مسابقات ویژه Battle Royale</p>
+      <span class="product-tag">در حال ثبت‌نام</span>
     </div>
 
     <div class="card">
       <h3>⚔️ مولتی‌پلیر</h3>
-      <p>مهارت خودت را در نبردهای Multiplayer نشان بده.</p>
-      <br>
-      <span class="badge">به‌زودی</span>
+      <p>رقابت بازیکنان Multiplayer</p>
+      <span class="product-tag">به‌زودی</span>
     </div>
 
     <div class="card">
-      <h3>👑 مسابقات Legendary</h3>
-      <p>رقابت ویژه بازیکنان رده Legendary.</p>
-      <br>
-      <span class="badge">به‌زودی</span>
+      <h3>👑 Legendary</h3>
+      <p>مسابقات مخصوص بازیکنان حرفه‌ای</p>
+      <span class="product-tag">به‌زودی</span>
     </div>
 
   </div>
@@ -429,45 +383,45 @@ footer{
 
   <div class="section-title">
     <h2>🏅 سیستم رنک</h2>
-    <p>مسیر پیشرفت بازیکن از Bronze تا Legendary</p>
+    <p>از Bronze تا Legendary</p>
   </div>
 
   <div class="cards">
 
     <div class="card rank">
       <div class="rank-icon">🥉</div>
-      <div class="rank-name">Bronze</div>
-      <div class="rank-points">0 تا 999 امتیاز</div>
+      <h3>Bronze</h3>
+      <p>0 تا 999 امتیاز</p>
     </div>
 
     <div class="card rank">
       <div class="rank-icon">🥈</div>
-      <div class="rank-name">Silver</div>
-      <div class="rank-points">1000 تا 1999 امتیاز</div>
+      <h3>Silver</h3>
+      <p>1000 تا 1999 امتیاز</p>
     </div>
 
     <div class="card rank">
       <div class="rank-icon">🥇</div>
-      <div class="rank-name">Gold</div>
-      <div class="rank-points">2000 تا 2999 امتیاز</div>
+      <h3>Gold</h3>
+      <p>2000 تا 2999 امتیاز</p>
     </div>
 
     <div class="card rank">
       <div class="rank-icon">💎</div>
-      <div class="rank-name">Platinum</div>
-      <div class="rank-points">3000 تا 3999 امتیاز</div>
+      <h3>Platinum</h3>
+      <p>3000 تا 3999 امتیاز</p>
     </div>
 
     <div class="card rank">
       <div class="rank-icon">🔷</div>
-      <div class="rank-name">Diamond</div>
-      <div class="rank-points">4000 تا 4999 امتیاز</div>
+      <h3>Diamond</h3>
+      <p>4000 تا 4999 امتیاز</p>
     </div>
 
     <div class="card rank">
       <div class="rank-icon">👑</div>
-      <div class="rank-name">Legendary</div>
-      <div class="rank-points">5000+ امتیاز</div>
+      <h3>Legendary</h3>
+      <p>5000+ امتیاز</p>
     </div>
 
   </div>
@@ -513,6 +467,8 @@ footer{
   </table>
 </section>
 
+<!-- فروشگاه -->
+
 <section class="section" id="shop">
 
   <div class="section-title">
@@ -522,63 +478,218 @@ footer{
 
   <div class="cards">
 
-    <div class="card shop-card">
-      <div class="product-icon">💳</div>
-      <h3>CP کالاف دیوتی</h3>
-      <p>بسته CP برای اکانت بازی</p>
-      <div class="price">قیمت: به‌زودی</div>
-      <button class="btn" onclick="addToCart('CP کالاف دیوتی')">
-        افزودن به سبد
-      </button>
-    </div>
+    <!-- CP -->
 
     <div class="card shop-card">
-      <div class="product-icon">🔥</div>
-      <h3>اسکین ویژه</h3>
-      <p>محصولات و آیتم‌های ویژه CODM</p>
-      <div class="price">قیمت: به‌زودی</div>
-      <button class="btn" onclick="addToCart('اسکین ویژه CODM')">
-        افزودن به سبد
+
+      <img
+      class="product-image"
+      src="https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?auto=format&fit=crop&w=900&q=80"
+      alt="CP کالاف دیوتی">
+
+      <h3>💳 بسته CP</h3>
+
+      <p>
+        بسته CP مخصوص بازیکنان CODM
+      </p>
+
+      <span class="product-tag">
+        CP
+      </span>
+
+      <div class="price">
+        ۲,۰۰۰ تومان
+      </div>
+
+      <button class="btn"
+      onclick="addToCart('بسته CP - ۲,۰۰۰ تومان')">
+        افزودن به سبد 🛒
       </button>
+
     </div>
 
-    <div class="card shop-card">
-      <div class="product-icon">👑</div>
-      <h3>بسته Legendary</h3>
-      <p>محصولات ویژه بازیکنان Legendary</p>
-      <div class="price">قیمت: به‌زودی</div>
-      <button class="btn" onclick="addToCart('بسته Legendary')">
-        افزودن به سبد
-      </button>
-    </div>
+
+    <!-- Skin -->
 
     <div class="card shop-card">
-      <div class="product-icon">🎁</div>
-      <h3>بسته ویژه</h3>
-      <p>بسته‌های ویژه AlcatrazCODM</p>
-      <div class="price">قیمت: به‌زودی</div>
-      <button class="btn" onclick="addToCart('بسته ویژه')">
-        افزودن به سبد
+
+      <img
+      class="product-image"
+      src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80"
+      alt="اسکین CODM">
+
+      <h3>🔥 اسکین ویژه CODM</h3>
+
+      <p>
+        اسکین ویژه برای بازیکنان کالاف دیوتی موبایل
+      </p>
+
+      <span class="product-tag">
+        SKIN
+      </span>
+
+      <div class="price">
+        ۵,۰۰۰ تومان
+      </div>
+
+      <button class="btn"
+      onclick="addToCart('اسکین ویژه CODM - ۵,۰۰۰ تومان')">
+        افزودن به سبد 🛒
       </button>
+
+    </div>
+
+
+    <!-- Legendary -->
+
+    <div class="card shop-card">
+
+      <img
+      class="product-image"
+      src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80"
+      alt="Legendary">
+
+      <h3>👑 بسته Legendary</h3>
+
+      <p>
+        بسته مخصوص بازیکنان Legendary
+      </p>
+
+      <span class="product-tag">
+        LEGENDARY
+      </span>
+
+      <div class="price">
+        ۱۰,۰۰۰ تومان
+      </div>
+
+      <button class="btn"
+      onclick="addToCart('بسته Legendary - ۱۰,۰۰۰ تومان')">
+        افزودن به سبد 🛒
+      </button>
+
+    </div>
+
+
+    <!-- Weapon -->
+
+    <div class="card shop-card">
+
+      <img
+      class="product-image"
+      src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=900&q=80"
+      alt="Weapon">
+
+      <h3>🔫 اسلحه ویژه</h3>
+
+      <p>
+        آیتم ویژه اسلحه برای CODM
+      </p>
+
+      <span class="product-tag">
+        WEAPON
+      </span>
+
+      <div class="price">
+        ۷,۵۰۰ تومان
+      </div>
+
+      <button class="btn"
+      onclick="addToCart('اسلحه ویژه - ۷,۵۰۰ تومان')">
+        افزودن به سبد 🛒
+      </button>
+
+    </div>
+
+
+    <!-- Battle Pass -->
+
+    <div class="card shop-card">
+
+      <img
+      class="product-image"
+      src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80"
+      alt="Battle Pass">
+
+      <h3>🎫 Battle Pass</h3>
+
+      <p>
+        بسته ویژه Battle Pass
+      </p>
+
+      <span class="product-tag">
+        BATTLE PASS
+      </span>
+
+      <div class="price">
+        ۸,۰۰۰ تومان
+      </div>
+
+      <button class="btn"
+      onclick="addToCart('Battle Pass - ۸,۰۰۰ تومان')">
+        افزودن به سبد 🛒
+      </button>
+
+    </div>
+
+
+    <!-- Special -->
+
+    <div class="card shop-card">
+
+      <img
+      class="product-image"
+      src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=80"
+      alt="Gaming Pack">
+
+      <h3>🎁 بسته ویژه</h3>
+
+      <p>
+        بسته ویژه AlcatrazCODM
+      </p>
+
+      <span class="product-tag">
+        SPECIAL
+      </span>
+
+      <div class="price">
+        ۱۲,۰۰۰ تومان
+      </div>
+
+      <button class="btn"
+      onclick="addToCart('بسته ویژه - ۱۲,۰۰۰ تومان')">
+        افزودن به سبد 🛒
+      </button>
+
     </div>
 
   </div>
+
 </section>
+
 
 <section class="section" id="account">
 
   <div class="section-title">
     <h2>👤 حساب کاربری</h2>
-    <p>ورود به حساب AlcatrazCODM</p>
+    <p>ورود به AlcatrazCODM</p>
   </div>
 
   <div class="card account">
 
     <label>ایمیل</label>
-    <input class="input" type="email" placeholder="ایمیل خود را وارد کنید">
+
+    <input
+    class="input"
+    type="email"
+    placeholder="ایمیل خود را وارد کنید">
 
     <label>رمز عبور</label>
-    <input class="input" type="password" placeholder="رمز عبور">
+
+    <input
+    class="input"
+    type="password"
+    placeholder="رمز عبور">
 
     <button class="btn" onclick="loginDemo()">
       ورود
@@ -589,29 +700,44 @@ footer{
     <p id="loginMessage"></p>
 
   </div>
+
 </section>
 
+
 <footer>
+
   <p>© 2026 AlcatrazCODM</p>
   <p>تمامی حقوق محفوظ است.</p>
+
 </footer>
 
+
+<!-- سبد خرید -->
+
 <div class="cart" onclick="openCart()">
+
   🛒 سبد خرید
-  <span id="cartCount">0</span>
+
+  <span id="cartCount">
+    0
+  </span>
+
 </div>
+
 
 <div id="cartPanel">
 
   <div class="cart-box">
 
-    <span class="close" onclick="closeCart()">✕</span>
+    <span class="close" onclick="closeCart()">
+      ✕
+    </span>
 
     <h2>🛒 سبد خرید</h2>
 
     <br>
 
-    <div id="cartItems" class="empty">
+    <div id="cartItems">
       سبد خرید خالی است.
     </div>
 
@@ -625,43 +751,55 @@ footer{
 
 </div>
 
+
 <script>
 
-let cart = [];
+let cart=[];
+
 
 function addToCart(product){
 
   cart.push(product);
 
-  document.getElementById("cartCount").innerText = cart.length;
+  document.getElementById("cartCount").innerText=cart.length;
 
   alert("محصول به سبد خرید اضافه شد ✅");
+
 }
+
 
 function openCart(){
 
   document.getElementById("cartPanel").style.display="block";
 
   renderCart();
+
 }
+
 
 function closeCart(){
 
   document.getElementById("cartPanel").style.display="none";
+
 }
+
 
 function renderCart(){
 
-  const box = document.getElementById("cartItems");
+  const box=document.getElementById("cartItems");
 
-  if(cart.length === 0){
+  if(cart.length===0){
 
-    box.innerHTML="سبد خرید خالی است.";
+    box.innerHTML=
+    '<div style="text-align:center;color:#8d9aad;padding:20px">سبد خرید خالی است.</div>';
 
     return;
+
   }
 
+
   box.innerHTML="";
+
 
   cart.forEach((item,index)=>{
 
@@ -670,10 +808,15 @@ function renderCart(){
     div.className="cart-item";
 
     div.innerHTML=`
+
       <span>${item}</span>
-      <button class="btn" onclick="removeItem(${index})">
-        حذف
+
+      <button
+      class="btn"
+      onclick="removeItem(${index})">
+      حذف
       </button>
+
     `;
 
     box.appendChild(div);
@@ -682,6 +825,7 @@ function renderCart(){
 
 }
 
+
 function removeItem(index){
 
   cart.splice(index,1);
@@ -689,19 +833,26 @@ function removeItem(index){
   document.getElementById("cartCount").innerText=cart.length;
 
   renderCart();
+
 }
+
 
 function checkout(){
 
   if(cart.length===0){
 
-    alert("سبد خرید شما خالی است.");
+    alert("سبد خرید خالی است.");
 
     return;
+
   }
 
-  alert("سیستم تسویه‌حساب در مرحله بعد به سایت اضافه می‌شود.");
+  alert(
+    "سیستم پرداخت در مرحله بعد به درگاه پرداخت متصل می‌شود."
+  );
+
 }
+
 
 function loginDemo(){
 
