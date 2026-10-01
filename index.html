@@ -1,49 +1,177 @@
-      <div class="card shop-card">
-        <div class="shop-art">👑</div>
-        <div class="shop-info">
-          <h3>Legendary</h3>
-          <p>محصولات لجندری</p>
-          <span class="price">مشاهده محصولات</span>
-        </div>
-      </div>
 
-      <div class="card shop-card">
-        <div class="shop-art">🛡️</div>
-        <div class="shop-info">
-          <h3>Silver</h3>
-          <p>محصولات سیلور</p>
-          <span class="price">مشاهده محصولات</span>
-        </div>
-      </div>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alcatraz CODM | خانه</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#080d18;color:#fff}
+header{background:#101a2d;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;border-bottom:2px solid #00c8ff}
+.logo{font-size:23px;font-weight:bold;color:#00c8ff}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#00c8ff}
+.hero{min-height:390px;padding:70px 7%;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(90deg,rgba(5,10,20,.96),rgba(5,10,20,.55)),linear-gradient(135deg,#12345c,#111827,#401b2e)}
+.hero h1{font-size:clamp(30px,5vw,54px);margin:0 0 15px}
+.hero h1 span{color:#00c8ff}
+.hero p{color:#cbd5e1;max-width:600px;line-height:2}
+.btn{display:inline-block;background:#00b9ed;color:#06111d;padding:13px 22px;border-radius:8px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
+.btn:hover{background:#62dcff}
+section{padding:45px 6%}
+.section-title{font-size:25px;margin:0 0 25px;border-right:4px solid #00c8ff;padding-right:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#121d31;border:1px solid #253653;border-radius:14px;padding:22px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#00c8ff}
+.card h3{color:#00c8ff;margin-top:0}
+.card p{color:#b8c5d8;line-height:1.8}
+.price{font-size:20px;font-weight:bold;color:#ffe16a}
+table{width:100%;border-collapse:collapse;background:#121d31;border-radius:12px;overflow:hidden}
+th,td{padding:15px;text-align:center;border-bottom:1px solid #26344c}
+th{background:#173052;color:#00c8ff}
+tr:last-child td{border:0}
+.rank{color:#ffd45a;font-weight:bold}
+.profile{max-width:600px;margin:auto;background:#121d31;padding:25px;border-radius:14px;border:1px solid #253653}
+label{display:block;margin-top:12px;color:#cbd5e1}
+input{width:100%;padding:13px;margin:8px 0 15px;border:1px solid #334766;border-radius:8px;background:#0a1220;color:white}
+.notice{color:#9fb1c9;font-size:12px;line-height:1.8}
+footer{text-align:center;padding:25px;color:#9eacc1;background:#0c1423;border-top:1px solid #26344c}
+@media(max-width:600px){header{justify-content:center}nav{justify-content:center}.hero{padding:55px 6%}section{padding:35px 5%}}
+</style>
+</head>
+<body>
 
-      <div class="card shop-card">
-        <div class="shop-art">🎖️</div>
-        <div class="shop-info">
-          <h3>BR</h3>
-          <p>محصولات بتل رویال</p>
-          <span class="price">مشاهده محصولات</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<header>
+ <div class="logo">⚡ ALCATRAZ CODM</div>
+ <nav>
+  <a href="#home">خانه</a>
+  <a href="#tournament">تورنومنت</a>
+  <a href="#leaderboard">رتبه‌بندی</a>
+  <a href="#shop">فروشگاه</a>
+  <a href="#account">حساب کاربری</a>
+ </nav>
+</header>
 
-  <section id="account">
-    <div class="section-title">
-      <h2>👤 حساب کاربری</h2>
-      <p>به‌زودی امکانات حساب کاربری اضافه می‌شود.</p>
-    </div>
-    <div class="card" style="text-align:center">
-      <p>ثبت‌نام، ورود و مشاهده اطلاعات بازیکنان</p>
-      <a href="#" class="btn">به‌زودی</a>
-    </div>
-  </section>
+<main>
+<section class="hero" id="home">
+ <h1>به <span>ALCATRAZ</span> خوش آمدی</h1>
+ <p>وارد میدان رقابت شو، در تورنومنت‌ها شرکت کن، رتبه بگیر و مهارتت را در Call of Duty Mobile نشان بده!</p>
+ <div><a class="btn" href="#tournament">مشاهده تورنومنت‌ها</a></div>
+</section>
+
+<section id="tournament">
+ <h2 class="section-title">🏆 تورنومنت‌ها</h2>
+ <div class="cards">
+  <div class="card">
+   <h3>🔥 تورنومنت Alcatraz</h3>
+   <p>رقابت در نقشه Alcatraz</p>
+   <p>ظرفیت: 100 بازیکن</p>
+   <p>جایزه: 1000 امتیاز</p>
+   <a class="btn" href="#account">ورود به رقابت</a>
+  </div>
+  <div class="card">
+   <h3>⚔️ رقابت حرفه‌ای BR</h3>
+   <p>مسابقه ویژه بازیکنان بتل رویال</p>
+   <p>ظرفیت: 50 بازیکن</p>
+   <p>جایزه: 500 امتیاز</p>
+   <a class="btn" href="#account">ورود به رقابت</a>
+  </div>
+  <div class="card">
+   <h3>💎 مسابقه هفتگی</h3>
+   <p>برای تمام بازیکنان سایت</p>
+   <p>ظرفیت: 100 بازیکن</p>
+   <p>جایزه: 250 امتیاز</p>
+   <a class="btn" href="#account">ورود به رقابت</a>
+  </div>
+ </div>
+</section>
+
+<section id="leaderboard">
+ <h2 class="section-title">👑 جدول رتبه‌بندی</h2>
+ <div style="overflow-x:auto">
+  <table>
+   <thead>
+    <tr><th>رتبه</th><th>نام بازیکن</th><th>رنک</th><th>امتیاز</th></tr>
+   </thead>
+   <tbody>
+    <tr><td>🥇 1</td><td>Player One</td><td class="rank">Legendary</td><td>9500</td></tr>
+    <tr><td>🥈 2</td><td>Player Two</td><td class="rank">Legendary</td><td>8700</td></tr>
+    <tr><td>🥉 3</td><td>Player Three</td><td class="rank">Master</td><td>7600</td></tr>
+    <tr><td>4</td><td>Player Four</td><td>Grandmaster</td><td>6200</td></tr>
+    <tr><td>5</td><td>Player Five</td><td>Master</td><td>5100</td></tr>
+   </tbody>
+  </table>
+ </div>
+ <p class="notice">این جدول فعلاً نمونه است و امتیازها به‌صورت خودکار از بازی دریافت نمی‌شوند.</p>
+</section>
+
+<section id="shop">
+ <h2 class="section-title">🛒 فروشگاه</h2>
+ <div class="cards">
+  <div class="card">
+   <h3>💎 Diamond</h3>
+   <p>محصولات دسته دایموند</p>
+   <div class="price">100 امتیاز</div>
+   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
+  </div>
+  <div class="card">
+   <h3>🥇 Gold</h3>
+   <p>محصولات دسته گلد</p>
+   <div class="price">200 امتیاز</div>
+   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
+  </div>
+  <div class="card">
+   <h3>⚙️ Damascus</h3>
+   <p>محصولات دسته دمَسکاس</p>
+   <div class="price">350 امتیاز</div>
+   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
+  </div>
+  <div class="card">
+   <h3>👑 Legendary</h3>
+   <p>محصولات ویژه لجندری</p>
+   <div class="price">500 امتیاز</div>
+   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
+  </div>
+  <div class="card">
+   <h3>🪙 Silver</h3>
+   <p>محصولات دسته سیلور</p>
+   <div class="price">50 امتیاز</div>
+   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
+  </div>
+  <div class="card">
+   <h3>🪂 Battle Royale</h3>
+   <p>محصولات ویژه بتل رویال</p>
+   <div class="price">150 امتیاز</div>
+   <p><button class="btn" onclick="alert('فروشگاه هنوز به سیستم خرید متصل نیست.')">مشاهده محصول</button></p>
+  </div>
+ </div>
+</section>
+
+<section id="account">
+ <h2 class="section-title">👤 پنل کاربری</h2>
+ <div class="profile">
+  <h3 style="color:#00c8ff">ورود به حساب کاربری</h3>
+  <form onsubmit="event.preventDefault();alert('این فرم هنوز به سیستم ثبت‌نام و ورود متصل نیست.');">
+   <label for="username">نام کاربری</label>
+   <input id="username" type="text" placeholder="نام کاربری خود را وارد کن" required>
+   <label for="email">ایمیل</label>
+   <input id="email" type="email" placeholder="ایمیل خود را وارد کن" required>
+   <label for="password">رمز عبور</label>
+   <input id="password" type="password" placeholder="رمز عبور" required>
+   <button class="btn" type="submit">ورود</button>
+  </form>
+  <p class="notice">این فرم فقط نمایشی است. برای ورود واقعی، ثبت‌نام، بازیابی رمز و ذخیره اطلاعات باید سیستم بک‌اند و پایگاه داده راه‌اندازی شود.</p>
+ </div>
+</section>
 </main>
 
 <footer>
-  <strong>ALCATRAZ CODM</strong>
-  <p>دنیای رقابت و هیجان کالاف دیوتی موبایل</p>
-  <p>© 2026 AlcatrazCODM</p>
+ <p>© 2026 AlcatrazCODM</p>
+ <p>ساخته‌شده برای جامعه بازیکنان Call of Duty Mobile</p>
 </footer>
 
 </body>
-</html>
+      </html>
+      
