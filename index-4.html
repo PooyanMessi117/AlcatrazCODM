@@ -1,604 +1,73 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AlcatrazCODM | تورنمنت‌ها</title>
+<!-- بخش کانال روبیکا -->
+<div class="rubika-section">
+  <a href="https://rubika.ir/Alcatraz_Codm"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="rubika-link">
+
+    <div class="rubika-icon">ر</div>
+
+    <div class="rubika-text">
+      <strong>کانال روبیکای ما</strong>
+      <span>@Alcatraz_Codm</span>
+    </div>
+
+    <span class="rubika-arrow">➜</span>
+  </a>
+</div>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+.rubika-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  direction: rtl;
 }
 
-body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#07090d;
-    color:#fff;
+.rubika-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #24134c, #101827);
+  border: 1px solid #9b5cff;
+  border-radius: 16px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 0 20px #8b5cf644;
+  transition: 0.3s;
 }
 
-.container{
-    width:min(1200px,94%);
-    margin:auto;
+.rubika-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #a855f7aa;
 }
 
-header{
-    padding:25px 0;
-    text-align:center;
+.rubika-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #c084fc, #6d28d9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
 }
 
-.logo{
-    font-size:30px;
-    font-weight:bold;
-    color:#ffb300;
+.rubika-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.subtitle{
-    color:#aaa;
-    margin-top:8px;
+.rubika-text span {
+  font-size: 12px;
+  color: #c4b5fd;
 }
 
-/* TOURNAMENTS */
-
-.tournaments{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-    margin:30px 0 60px;
+.rubika-arrow {
+  font-size: 20px;
+  margin-right: 8px;
 }
-
-.card{
-    background:#11151d;
-    border:1px solid #262c36;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 10px 30px #0008;
-    transition:.25s;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-    border-color:#ffb300;
-}
-
-.card img{
-    width:100%;
-    height:190px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:18px;
-}
-
-.badge{
-    display:inline-block;
-    background:#1c8c4a;
-    padding:6px 10px;
-    border-radius:20px;
-    font-size:12px;
-    margin-bottom:10px;
-}
-
-.card h2{
-    margin-bottom:14px;
-}
-
-.info{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    color:#bbb;
-    font-size:14px;
-}
-
-.join-btn,
-.confirm-btn,
-.back-btn{
-    width:100%;
-    border:0;
-    border-radius:12px;
-    padding:14px;
-    margin-top:18px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.join-btn,
-.confirm-btn{
-    background:#ffb300;
-    color:#111;
-}
-
-.join-btn:hover,
-.confirm-btn:hover{
-    background:#ffc933;
-}
-
-.back-btn{
-    background:#252b35;
-    color:#fff;
-}
-
-/* DETAILS */
-
-#details{
-    display:none;
-    background:#0e1219;
-    border:1px solid #292f39;
-    border-radius:20px;
-    padding:25px;
-    margin-bottom:60px;
-}
-
-.detail-header{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
-    align-items:center;
-}
-
-.detail-header img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    border-radius:16px;
-}
-
-.detail-info h1{
-    font-size:32px;
-    margin-bottom:20px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-}
-
-.stat{
-    background:#171c25;
-    border-radius:12px;
-    padding:15px;
-}
-
-.stat span{
-    display:block;
-    color:#888;
-    font-size:13px;
-    margin-bottom:5px;
-}
-
-.stat strong{
-    color:#ffb300;
-    font-size:18px;
-}
-
-/* CAPACITY */
-
-.capacity-box{
-    margin-top:25px;
-    background:#171c25;
-    padding:18px;
-    border-radius:15px;
-}
-
-.capacity-top{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:10px;
-}
-
-.progress{
-    height:12px;
-    background:#292e38;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-.progress-bar{
-    height:100%;
-    width:72%;
-    background:#ffb300;
-}
-
-/* PLAYERS */
-
-.players{
-    margin-top:30px;
-}
-
-.players h2{
-    margin-bottom:18px;
-}
-
-.player-list{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:12px;
-}
-
-.player{
-    background:#171c25;
-    border-radius:15px;
-    padding:15px;
-    text-align:center;
-}
-
-.player img{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    object-fit:cover;
-    border:2px solid #ffb300;
-    margin-bottom:10px;
-}
-
-.player-name{
-    font-weight:bold;
-}
-
-.rank{
-    color:#ffb300;
-    font-size:13px;
-    margin-top:5px;
-}
-
-.substitute{
-    border:1px dashed #777;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-    .tournaments{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .detail-header{
-        grid-template-columns:1fr;
-    }
-
-    .player-list{
-        grid-template-columns:repeat(3,1fr);
-    }
-}
-
-@media(max-width:600px){
-    .tournaments{
-        grid-template-columns:1fr;
-    }
-
-    .stats{
-        grid-template-columns:1fr;
-    }
-
-    .player-list{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .detail-header img{
-        height:220px;
-    }
-
-    .detail-info h1{
-        font-size:25px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <div class="container">
-        <div class="logo">ALCATRAZ CODM</div>
-        <div class="subtitle">تورنمنت‌های Call of Duty Mobile</div>
-    </div>
-</header>
-
-
-<main class="container">
-
-<section class="tournaments">
-
-<!-- Tournament 1 -->
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85">
-
-<div class="card-content">
-
-<span class="badge">ثبت‌نام باز</span>
-
-<h2>Alcatraz Night Cup</h2>
-
-<div class="info">
-<div>🏆 جایزه: 2000 CP</div>
-<div>🕙 شروع: 22:00</div>
-<div>🎮 حالت: BR</div>
-<div>💰 ورود: رایگان</div>
-</div>
-
-<button
-class="join-btn"
-onclick="openTournament(
-'Alcatraz Night Cup',
-'2000 CP',
-'25 تیم',
-'18 تیم',
-'Battle Royale',
-'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85'
-)">
-شرکت در تورنمنت
-</button>
-
-</div>
-</div>
-
-
-<!-- Tournament 2 -->
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=85">
-
-<div class="card-content">
-
-<span class="badge">ثبت‌نام باز</span>
-
-<h2>Legendary Rush</h2>
-
-<div class="info">
-<div>🏆 جایزه: 1500 CP</div>
-<div>🕙 شروع: 20:00</div>
-<div>🎮 حالت: MP</div>
-<div>💰 ورود: 100 CP</div>
-</div>
-
-<button
-class="join-btn"
-onclick="openTournament(
-'Legendary Rush',
-'1500 CP',
-'25 تیم',
-'12 تیم',
-'Multiplayer',
-'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1200&q=85'
-)">
-شرکت در تورنمنت
-</button>
-
-</div>
-</div>
-
-
-<!-- Tournament 3 -->
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=85">
-
-<div class="card-content">
-
-<span class="badge">ثبت‌نام باز</span>
-
-<h2>Alcatraz Squad War</h2>
-
-<div class="info">
-<div>🏆 جایزه: 3000 CP</div>
-<div>🕙 شروع: 18:00</div>
-<div>🎮 حالت: Squad</div>
-<div>💰 ورود: 200 CP</div>
-</div>
-
-<button
-class="join-btn"
-onclick="openTournament(
-'Alcatraz Squad War',
-'3000 CP',
-'25 تیم',
-'21 تیم',
-'Squad',
-'https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=85'
-)">
-شرکت در تورنمنت
-</button>
-
-</div>
-</div>
-
-</section>
-
-
-<!-- DETAILS -->
-
-<section id="details">
-
-<div class="detail-header">
-
-<img id="detailImage" src="">
-
-<div class="detail-info">
-
-<h1 id="detailTitle"></h1>
-
-<div class="stats">
-
-<div class="stat">
-<span>🏆 جایزه</span>
-<strong id="detailPrize"></strong>
-</div>
-
-<div class="stat">
-<span>👥 ظرفیت</span>
-<strong id="detailCapacity"></strong>
-</div>
-
-<div class="stat">
-<span>✅ ثبت‌نام شده</span>
-<strong id="detailJoined"></strong>
-</div>
-
-<div class="stat">
-<span>🎮 حالت بازی</span>
-<strong id="detailMode"></strong>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div class="capacity-box">
-
-<div class="capacity-top">
-<span>ظرفیت تورنمنت</span>
-<strong id="capacityText">18 / 25</strong>
-</div>
-
-<div class="progress">
-<div class="progress-bar" id="progressBar"></div>
-</div>
-
-</div>
-
-
-<!-- PLAYERS -->
-
-<div class="players">
-
-<h2>👤 بازیکنان ثبت‌نام‌شده</h2>
-
-<div class="player-list">
-
-<div class="player">
-
-<img src="https://i.pravatar.cc/120?img=12">
-
-<div class="player-name">Shadow</div>
-
-<div class="rank">Legendary</div>
-
-</div>
-
-
-<div class="player">
-
-<img src="https://i.pravatar.cc/120?img=32">
-
-<div class="player-name">GhostX</div>
-
-<div class="rank">Grandmaster</div>
-
-</div>
-
-
-<div class="player">
-
-<img src="https://i.pravatar.cc/120?img=14">
-
-<div class="player-name">Alcatraz</div>
-
-<div class="rank">Legendary</div>
-
-</div>
-
-
-<div class="player">
-
-<img src="https://i.pravatar.cc/120?img=56">
-
-<div class="player-name">SniperIR</div>
-
-<div class="rank">Master</div>
-
-</div>
-
-
-<div class="player substitute">
-
-<img src="https://i.pravatar.cc/120?img=5">
-
-<div class="player-name">Reserve</div>
-
-<div class="rank">ذخیره</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<button class="confirm-btn" onclick="confirmJoin()">
-تأیید و شرکت در تورنمنت
-</button>
-
-<button class="back-btn" onclick="closeTournament()">
-بازگشت به تورنمنت‌ها
-</button>
-
-</section>
-
-</main>
-
-
-<script>
-
-function openTournament(title, prize, capacity, joined, mode, image){
-
-    document.getElementById("details").style.display = "block";
-
-    document.getElementById("detailTitle").innerText = title;
-    document.getElementById("detailPrize").innerText = prize;
-    document.getElementById("detailCapacity").innerText = capacity;
-    document.getElementById("detailJoined").innerText = joined;
-    document.getElementById("detailMode").innerText = mode;
-    document.getElementById("detailImage").src = image;
-
-    let joinedNumber = parseInt(joined);
-    let capacityNumber = parseInt(capacity);
-
-    let percent = Math.round(
-        (joinedNumber / capacityNumber) * 100
-    );
-
-    document.getElementById("capacityText").innerText =
-        joinedNumber + " / " + capacityNumber;
-
-    document.getElementById("progressBar").style.width =
-        percent + "%";
-
-    document.getElementById("details").scrollIntoView({
-        behavior:"smooth"
-    });
-}
-
-
-function closeTournament(){
-
-    document.getElementById("details").style.display = "none";
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-}
-
-
-function confirmJoin(){
-
-    alert(
-        "ثبت‌نام شما با موفقیت ثبت شد! 🎮\n\n" +
-        "در نسخه نهایی این قسمت به حساب کاربری، تیم و سیستم ثبت‌نام واقعی متصل می‌شود."
-    );
-
-}
-
-</script>
-
-</body>
-  </html>
+    </style>
